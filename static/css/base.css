@@ -1,0 +1,32 @@
+/* base.css */
+body {
+    background-image: url("{% static 'images/img.png' %}");
+}
+
+#header {
+    background-color: #f2f2f2;
+    padding: 10px;
+    text-align: center;
+}
+
+.logo {
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+#subheader {
+    background-color: #f9f9f9;
+    padding: 10px;
+    text-align: center;
+}
+
+.cart {
+    font-size: 18px;
+    color: #999;
+}
+
+#content {
+    padding: 20px;
+}
