@@ -1,0 +1,61 @@
+/* CSS стили для корзины */
+.cart {
+  margin-bottom: 20px;
+}
+
+.cart h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.cart table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cart table th,
+.cart table td {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.cart table th {
+  text-align: left;
+}
+
+.cart table td.num {
+  text-align: right;
+}
+
+.cart table td a {
+  color: #000;
+  text-decoration: none;
+}
+
+.cart table td a:hover {
+  text-decoration: underline;
+}
+
+.cart table .total {
+  font-weight: bold;
+}
+
+.cart p.text-right {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.cart p.text-right .button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.cart p.text-right .button.light {
+  background-color: #ccc;
+  color: #000;
+}
