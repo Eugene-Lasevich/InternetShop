@@ -4,7 +4,7 @@
     Your shopping cart
 {% endblock %}
 {% block content %}
-    <link href="{% static 'css/cart.css' %}" rel="stylesheet">
+    <link href="{% static '/css/cart.css' %}" rel="stylesheet">
     <h1>Your shopping cart</h1>
     <table class="cart">
         <thead>
@@ -48,6 +48,8 @@
     </table>
     <p class="text-right">
         <a href="{% url 'shop:product_list' %}" class="button light">Continue shopping</a>
-        <a href="#" class="button">Checkout</a>
+       <a href="{% url 'orders:order_create' %}" class="button">
+        Checkout
+        </a>
     </p>
 {% endblock %}
