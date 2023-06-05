@@ -1,0 +1,52 @@
+/* Стили для блока информации о заказе */
+.order-info {
+    margin-bottom: 20px;
+}
+
+.order-info h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.order-info ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.order-info li {
+    margin-bottom: 5px;
+}
+
+.order-info li span {
+    float: right;
+}
+
+.order-info p {
+    font-weight: bold;
+}
+
+/* Стили для формы заказа */
+.order-form {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.order-form p {
+    margin-bottom: 10px;
+}
+
+.order-form input[type="submit"] {
+    background-color: #f1f1f1;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 200px; /* Добавлено выравнивание по ширине */
+    margin: 0 auto; /* Добавлено центрирование по горизонтали */
+}
+
+.order-form input[type="submit"]:hover {
+    background-color: #ddd;
+}

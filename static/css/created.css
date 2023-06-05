@@ -1,0 +1,17 @@
+/* Стили для блока с сообщением об успешном заказе */
+.success-message {
+    margin-bottom: 20px;
+}
+
+.success-message h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.success-message p {
+    font-size: 16px;
+}
+
+.success-message strong {
+    font-weight: bold;
+}

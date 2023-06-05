@@ -1,61 +1,45 @@
-/* CSS стили для корзины */
+/* Стили для таблицы корзины */
 .cart {
-  margin-bottom: 20px;
+    width: 100%;
+    border-collapse: collapse;
 }
 
-.cart h1 {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
+.cart th,
+.cart td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
 }
 
-.cart table {
-  width: 100%;
-  border-collapse: collapse;
+.cart th {
+    background-color: #f9f9f9;
 }
 
-.cart table th,
-.cart table td {
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
+.cart .total td {
+    font-weight: bold;
 }
 
-.cart table th {
-  text-align: left;
+/* Стили для изображения товара */
+.cart img {
+    width: 80px;
+    height: auto;
 }
 
-.cart table td.num {
-  text-align: right;
+/* Стили для кнопок */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    background-color: #f1f1f1;
+    color: #333;
+    border-radius: 5px;
 }
 
-.cart table td a {
-  color: #000;
-  text-decoration: none;
+.button.light {
+    background-color: #f9f9f9;
 }
 
-.cart table td a:hover {
-  text-decoration: underline;
-}
-
-.cart table .total {
-  font-weight: bold;
-}
-
-.cart p.text-right {
-  text-align: right;
-  margin-top: 20px;
-}
-
-.cart p.text-right .button {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #333;
-  color: #fff;
-  text-decoration: none;
-  margin-right: 10px;
-}
-
-.cart p.text-right .button.light {
-  background-color: #ccc;
-  color: #000;
+.button:hover {
+    background-color: #ddd;
 }
