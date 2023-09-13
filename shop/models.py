@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 
+
 class Category(models.Model):
     name = models.CharField(max_length=200, db_index=True)
     slug = models.SlugField(max_length=200, db_index=True, unique=True)
@@ -13,6 +14,7 @@ class Category(models.Model):
     def get_absolute_url(self):
         return reverse('shop:product_list_by_category',
                        args=[self.slug])
+
     def __str__(self):
         return self.name
 
@@ -33,10 +35,53 @@ class Product(models.Model):
         ordering = ('name',)
         # index_together = (('id', 'slug'),)
         indexes = [
-            models.Index(fields=['id','slug']),
+            models.Index(fields=['id', 'slug']),
         ]
+
     def get_absolute_url(self):
         return reverse('shop:product_detail',
                        args=[self.id, self.slug])
+
     def __str__(self):
         return self.name
+
+
+class Article(models.Model):
+    title = models.CharField(max_length=200,
+                             help_text='Enter article title')
+    short_argument = models.CharField(max_length=100)
+    content = models.TextField()
+    image = models.ImageField(upload_to='article')
+    date_of_creation = models.DateTimeField(auto_now_add=True)
+
+    def get_absolute_url(self):
+        return reverse('article-detail', args=[str(self.id)])
+
+    def str(self):
+        return self.title
+
+
+class Partner(models.Model):
+    partner_name = models.CharField(max_length=100)
+    description = models.CharField(max_length=200)
+    image = models.ImageField(upload_to='partner')
+    link = models.CharField(max_length=200)
+    slug = models.SlugField(max_length=200, db_index=True)
+
+    def get_absolute_url(self):
+        return reverse('partner-detail', args=[str(self.id)])
+
+    def str(self):
+        return self.partner_name
+
+
+class Advertisement(models.Model):
+    adv_name = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='advertisement')
+    link = models.CharField(max_length=200)
+
+    def get_absolute_url(self):
+        return reverse('advertisement-detail', args=[str(self.id)])
+
+    def str(self):
+        return self.adv_name

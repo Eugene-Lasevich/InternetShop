@@ -1,0 +1,31 @@
+{% extends "shop/base.html" %}
+
+{% block title %}Главная страница{% endblock %}
+
+{% block content %}
+<h1>Главная страница</h1>
+
+<!-- Краткая информация о последней статье -->
+<h2>{{ latest_article.title }}</h2>
+<p>{{ latest_article.short_argument }}</p>
+<p>{{ latest_article.date_of_creation }}</p>
+<img src="{{ latest_article.image.url }}" alt="{{ article.title }} Image">
+<p><a href="article/{{latest_article.id}}">Читать далее</a></p>
+
+<!-- Рекламный баннер -->
+<h2>Реклама</h2>
+<img src="{{ advertisement.image.url }}" alt="{{ advertisement.adv_name }} Banner">
+<a href="{{ advertisement.link }}" target="_blank">Перейти к рекламному ресурсу</a>
+
+<!-- Список компаний-партнеров -->
+<h2>Наши партнеры</h2>
+<ul>
+    {% for partner in partners %}
+        <li>
+            <a href="{{ partner.link }}" target="_blank">
+                <img src="{{ partner.image.url }}" alt="{{ partner.partner_name }} Logo">
+            </a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

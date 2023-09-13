@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ article.title }}</title>
+</head>
+<body>
+    <h1>{{ article.title }}</h1>
+    <p>{{ article.short_argument }}</p>
+    <p>{{ article.date_of_creation }}</p>
+    <img src="{{ article.image.url }}" alt="{{ article.title }} Image">
+    <p>{{ article.content }}</p>
+    <a href="/">Вернуться на главную</a>
+</body>
+</html>

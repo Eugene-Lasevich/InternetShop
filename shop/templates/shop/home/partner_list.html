@@ -1,0 +1,22 @@
+<!-- templates/partner_list.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Список партнеров</title>
+</head>
+<body>
+    <h1>Список партнеров</h1>
+    <ul>
+        {% for partner in partners %}
+            <li>
+                <h2>{{ partner.partner_name }}</h2>
+                <p>{{ partner.description }}</p>
+<!--                <img src="{{ partner.image.url }}" alt="{{ partner.partner_name }} Image">-->
+<!--                <a href="{{ partner.link }}" target="_blank">Перейти на сайт партнера</a>-->
+                <a href="{{ partner.link }}"><img src="{{ partner.image.url }}" alt="{{ partner.partner_name }} Image"></a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="/">Вернуться на главную</a>
+</body>
+</html>
