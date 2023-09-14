@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from cart.forms import CartAddProductForm
 from django.shortcuts import render, get_object_or_404
-from .models import Category, Product, Article, Partner,Advertisement, CompanyInfo, Contact
+from .models import Category, Product, Article, Partner, Advertisement, CompanyInfo, Contact
 
 
 def product_list(request, category_slug=None):
@@ -28,6 +28,7 @@ def product_detail(request, id, slug):
                   'shop/product/detail.html',
                   {'product': product, 'cart_product_form': cart_product_form})
 
+
 def home(request):
     # Получите последнюю опубликованную статью
     latest_article = Article.objects.latest('date_of_creation')
@@ -53,6 +54,7 @@ def article_list(request):
     }
 
     return render(request, 'shop/home/article_list.html', context)
+
 
 def article_detail(request, article_id):
     article = get_object_or_404(Article, id=article_id)
@@ -103,3 +105,6 @@ def contact_list(request):
 
     return render(request, 'shop/info/contact_list.html', context)
 
+
+def privacy_policy(request):
+    return render(request, 'shop/info/privacy_policy.html')
