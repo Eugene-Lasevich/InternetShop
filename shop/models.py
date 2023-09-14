@@ -93,4 +93,17 @@ class CompanyInfo(models.Model):
     logo = models.ImageField(upload_to='company_logo')
     history = models.TextField()
     contacts = models.TextField()
-    certificate = models.ImageField(upload_to='certificates')  # Изменено на ImageField
+    certificate = models.ImageField(upload_to='certificates')
+
+class Contact(models.Model):
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
+    photo = models.ImageField(upload_to='contact_photos', null=True, blank=True)
+    job_title = models.CharField(max_length=100)
+    description = models.TextField()
+    phone = models.CharField(max_length=20)
+    email = models.EmailField()
+    website = models.URLField()
+
+    def __str__(self):
+        return f"{self.first_name} {self.last_name}"

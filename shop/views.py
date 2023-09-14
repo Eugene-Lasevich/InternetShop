@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from cart.forms import CartAddProductForm
 from django.shortcuts import render, get_object_or_404
-from .models import Category, Product, Article, Partner,Advertisement, CompanyInfo
+from .models import Category, Product, Article, Partner,Advertisement, CompanyInfo, Contact
 
 
 def product_list(request, category_slug=None):
@@ -92,3 +92,14 @@ def company_info(request):
     }
 
     return render(request, 'shop/info/company_info.html', context)
+
+
+def contact_list(request):
+    contacts = Contact.objects.all()
+
+    context = {
+        'contacts': contacts,
+    }
+
+    return render(request, 'shop/info/contact_list.html', context)
+
