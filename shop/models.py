@@ -85,3 +85,12 @@ class Advertisement(models.Model):
 
     def str(self):
         return self.adv_name
+
+class CompanyInfo(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.TextField()
+    video_url = models.URLField()
+    logo = models.ImageField(upload_to='company_logo')
+    history = models.TextField()
+    contacts = models.TextField()
+    certificate = models.ImageField(upload_to='certificates')  # Изменено на ImageField

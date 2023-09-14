@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from cart.forms import CartAddProductForm
 from django.shortcuts import render, get_object_or_404
-from .models import Category, Product, Article, Partner,Advertisement
+from .models import Category, Product, Article, Partner,Advertisement, CompanyInfo
 
 
 def product_list(request, category_slug=None):
@@ -45,6 +45,15 @@ def home(request):
     return render(request, 'shop/home/home.html', context)
 
 
+def article_list(request):
+    articles = Article.objects.all()
+
+    context = {
+        'articles': articles,
+    }
+
+    return render(request, 'shop/home/article_list.html', context)
+
 def article_detail(request, article_id):
     article = get_object_or_404(Article, id=article_id)
 
@@ -73,3 +82,13 @@ def partner_detail(request, slug):
     }
 
     return render(request, 'shop/home/partner_detail.html', context)
+
+
+def company_info(request):
+    company_info = CompanyInfo.objects.first()
+
+    context = {
+        'company_info': company_info,
+    }
+
+    return render(request, 'shop/info/company_info.html', context)

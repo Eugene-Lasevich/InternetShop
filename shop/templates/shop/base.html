@@ -11,26 +11,29 @@
     <link href="{% static '/css/created.css' %}" rel="stylesheet">
 
 
-
 </head>
 <body background="static/images/img.png">
 <div id="header">
-    <a href="/store/" class="logo" >Мой магазин</a>
+    <a href="/" class="logo">Главная </a>
+    <a href="/store/" class="logo">Магазин </a>
+    <a href="/about/" class="logo">О нас </a>
+    <a href="/articles/" class="logo">Статьи</a>
+
 </div>
 <div id="subheader">
-  <div class="cart">
-    {% with total_items=cart|length %}
+    <div class="cart">
+        {% with total_items=cart|length %}
         {% if cart|length > 0 %}
-            Your cart:
-            <a href="{% url 'cart:cart_detail' %}">
-                {{ total_items }} item{{ total_items|pluralize }},
-                ${{ cart.get_total_price }}
-            </a>
+        Your cart:
+        <a href="{% url 'cart:cart_detail' %}">
+            {{ total_items }} item{{ total_items|pluralize }},
+            ${{ cart.get_total_price }}
+        </a>
         {% else %}
-            Your cart is empty.
+        Your cart is empty.
         {% endif %}
-    {% endwith %}
-</div>
+        {% endwith %}
+    </div>
 </div>
 <div id="content">
     {% block content %}

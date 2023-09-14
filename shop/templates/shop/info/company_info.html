@@ -1,0 +1,28 @@
+{% extends "shop/base.html" %}
+
+{% block title %}О компании{% endblock %}
+
+{% block content %}
+<div class="company-info">
+    <h1>{{ company_info.name }}</h1>
+    <p>{{ company_info.description }}</p>
+    
+    <!-- Видео -->
+    <iframe width="560" height="315" src="{{ company_info.video_url }}" frameborder="0" allowfullscreen></iframe>
+    
+    <!-- Логотип -->
+    <img src="{{ company_info.logo.url }}" alt="{{ company_info.name }} Logo">
+    
+    <!-- История -->
+    <h2>История компании</h2>
+    <p>{{ company_info.history|linebreaks }}</p>
+    
+    <!-- Реквизиты -->
+    <h2>Реквизиты</h2>
+    <p>{{ company_info.contacts|linebreaks }}</p>
+    
+    <!-- Сертификат -->
+    <h2>Сертификат</h2>
+    <img src="{{ company_info.certificate.url }}" alt="{{ company_info.name }} certificate">
+</div>
+{% endblock %}

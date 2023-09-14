@@ -1,0 +1,18 @@
+{% extends "shop/base.html" %}
+
+{% block title %}Список статей{% endblock %}
+
+{% block content %}
+<h1>Список статей</h1>
+
+<ul>
+    {% for article in articles %}
+        <li>
+            <h2><a href="{{ article.id }}">{{ article.title }}</a></h2>
+            <p>{{ article.short_argument }}</p>
+            <p>{{ article.date_of_creation }}</p>
+            <img src="{{ article.image.url }}" alt="{{ article.title }} Image">
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

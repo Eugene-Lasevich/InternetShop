@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Product,Article, Partner, Advertisement
+from .models import Category, Product,Article, Partner, Advertisement, CompanyInfo
 
 
 class CategoryAdmin(admin.ModelAdmin):
@@ -27,3 +27,7 @@ admin.site.register(Partner, PartnerAdmin)
 class AdvertisementAdmin(admin.ModelAdmin):
     list_display = ('adv_name', 'link')
 admin.site.register(Advertisement,AdvertisementAdmin)
+class CompanyInfoAdmin(admin.ModelAdmin):
+    list_display = ('name', 'description', 'video_url', 'logo', 'history', 'contacts', 'certificate')
+admin.site.register(CompanyInfo, CompanyInfoAdmin)
+
