@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Product,Article, Partner, Advertisement, CompanyInfo, Contact
+from .models import Category, Product,Article, Partner, Advertisement, CompanyInfo, Contact, FAQ
 
 
 class CategoryAdmin(admin.ModelAdmin):
@@ -35,5 +35,11 @@ class ContactAdmin(admin.ModelAdmin):
     list_display = ('first_name', 'last_name', 'job_title', 'phone', 'email', 'website')  # Определите, какие поля отображать в списке объектов
     search_fields = ('first_name', 'last_name', 'job_title', 'email')  # Добавьте поля для поиска
 admin.site.register(Contact, ContactAdmin)
+
+class FAQAdmin(admin.ModelAdmin):
+    list_display = ('question', 'date_added')
+    list_filter = ('date_added',)
+    search_fields = ('question', 'answer')
+admin.site.register(FAQ, FAQAdmin)
 
 

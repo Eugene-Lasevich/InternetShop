@@ -1,0 +1,47 @@
+{% extends "shop/base.html" %}
+
+{% block title %}Словарь терминов и понятий{% endblock %}
+
+{% block content %}
+<h1>Словарь терминов и понятий</h1>
+
+<ul class="faq-list">
+    {% for faq in faqs %}
+        <li class="faq-item">
+            <h2 class="faq-question">{{ faq.question }}</h2>
+            <p class="faq-answer">{{ faq.answer }}</p>
+            <p>Дата добавления: {{ faq.date_added }}</p>
+        </li>
+    {% endfor %}
+</ul>
+
+<script>
+    // JavaScript для аккордеона
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+        
+        question.addEventListener('click', () => {
+            answer.classList.toggle('show');
+        });
+    });
+</script>
+
+<style>
+    /* Стилизация аккордеона */
+    .faq-answer {
+        display: none;
+    }
+
+    .faq-answer.show {
+        display: block;
+    }
+
+    .faq-question {
+        cursor: pointer;
+    }
+</style>
+
+{% endblock %}
