@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Product,Article, Partner, Advertisement, CompanyInfo, Contact, FAQ
+from .models import Category, Product,Article, Partner, Advertisement, CompanyInfo, Contact, FAQ, Vacancy
 
 
 class CategoryAdmin(admin.ModelAdmin):
@@ -41,5 +41,12 @@ class FAQAdmin(admin.ModelAdmin):
     list_filter = ('date_added',)
     search_fields = ('question', 'answer')
 admin.site.register(FAQ, FAQAdmin)
+
+class VacancyAdmin(admin.ModelAdmin):
+    list_display = ('title', 'publication_date')
+    list_filter = ('publication_date',)
+    search_fields = ('title', 'description', 'requirements')
+admin.site.register(Vacancy, VacancyAdmin)
+
 
 

@@ -116,4 +116,11 @@ class FAQ(models.Model):
     def __str__(self):
         return self.question
 
+class Vacancy(models.Model):
+    title = models.CharField(max_length=200, help_text='Название вакансии')
+    description = models.TextField(help_text='Описание вакансии')
+    requirements = models.TextField(help_text='Требования к кандидату')
+    publication_date = models.DateTimeField(auto_now_add=True, help_text='Дата публикации')
 
+    def __str__(self):
+        return self.title

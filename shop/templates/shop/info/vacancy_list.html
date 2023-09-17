@@ -1,0 +1,18 @@
+{% extends "shop/base.html" %}
+
+{% block title %}Список вакансий{% endblock %}
+
+{% block content %}
+<h1>Список вакансий</h1>
+
+<ul>
+    {% for vacancy in vacancies %}
+        <li>
+            <h2>{{ vacancy.title }}</h2>
+            <p>Описание: {{ vacancy.description }}</p>
+            <p>Требования: {{ vacancy.requirements }}</p>
+            <p>Дата публикации: {{ vacancy.publication_date }}</p>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
