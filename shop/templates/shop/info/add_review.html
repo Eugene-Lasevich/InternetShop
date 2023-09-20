@@ -1,0 +1,15 @@
+{% extends "shop/base.html" %}
+
+{% block title %}Добавить отзыв{% endblock %}
+
+{% block content %}
+<h1>Добавить отзыв</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Отправить отзыв</button>
+</form>
+
+<a href="/review_list" class="btn btn-secondary">Назад к списку отзывов</a>
+{% endblock %}

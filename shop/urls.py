@@ -12,6 +12,9 @@ urlpatterns = [
     path('faq/', views.faq_list, name='faq-list'),
     path('vacancy/', views.vacancy_list, name='vacancy-list'),
 
+    path('reviews/', views.review_list, name='review-list'),
+    path('add_review/', views.add_review, name='add-review'),
+
     path('partners/', views.partner_list, name='partner-list'),
     path('store/<slug:category_slug>/', views.product_list, name='product_list_by_category'),
     path('<int:id>/<slug:slug>/', views.product_detail, name='product_detail'),

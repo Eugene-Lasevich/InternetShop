@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from cart.forms import CartAddProductForm
 from django.shortcuts import render, get_object_or_404
-from .models import Category, Product, Article, Partner, Advertisement, CompanyInfo, Contact, FAQ, Vacancy
-
+from .models import Category, Product, Article, Partner, Advertisement, CompanyInfo, Contact, FAQ, Vacancy, Review
+from django.contrib.auth.decorators import login_required
+from .forms import ReviewForm
 
 def product_list(request, category_slug=None):
     category = None
@@ -117,3 +118,36 @@ def vacancy_list(request):
     vacancies = Vacancy.objects.all()
     context = {'vacancies': vacancies}
     return render(request, 'shop/info/vacancy_list.html', context)
+
+# @login_required
+def review_list(request):
+    reviews = Review.objects.all()
+    return render(request, 'shop/info/review_list.html', {'reviews': reviews})
+
+# @login_required
+# def add_review(request):
+#     if request.method == 'POST':
+#         form = ReviewForm(request.POST)
+#         if form.is_valid():
+#             review = form.save(commit=False)
+#             # review.user = request.user
+#             review.name = request.user.username
+#             review.save()
+#             return redirect('/reviews')
+#     else:
+#         form = ReviewForm()
+#     return render(request, 'shop/info/add_review.html', {'form': form})
+@login_required
+def add_review(request):
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, user=request.user)  # Передайте пользователя в форму
+        if form.is_valid():
+            form.save()
+            return redirect('/reviews')
+    else:
+        form = ReviewForm(user=request.user)  # Передайте пользователя в форму
+
+    return render(request, 'shop/info/add_review.html', {'form': form})
+
+
+
