@@ -21,5 +21,6 @@ urlpatterns = [
     path('<int:id>/<slug:slug>/', views.product_detail, name='product_detail'),
     path('about/', views.company_info, name='company-info'),
     path('articles/', views.article_list, name='article-list'),
+    path('example/', views.example_view, name='example'),
     # path('partners/<slug:slug>/', views.partner_detail, name='partner-detail'),
 ]

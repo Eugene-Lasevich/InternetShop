@@ -149,5 +149,9 @@ def add_review(request):
 
     return render(request, 'shop/info/add_review.html', {'form': form})
 
+def example_view(request):
+    return render(request, 'shop/sandbox/example.html')
+
+
 
 
