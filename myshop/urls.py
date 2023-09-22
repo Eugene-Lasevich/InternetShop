@@ -3,13 +3,14 @@ from django.urls import include, path
 from django.conf import settings
 from django.conf.urls.static import static
 
-app_name='shop'
+app_name = 'shop'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('cart/', include('cart.urls', namespace='cart')),
     path('orders/', include('orders.urls', namespace='orders')),
-    path('', include(('shop.urls','shop'), namespace='shop')),
+    path('coupons/', include('coupons.urls', namespace='coupons')),
+    path('', include(('shop.urls', 'shop'), namespace='shop')),
     path('users/', include('users.urls')),
 
 ]

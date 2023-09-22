@@ -1,0 +1,20 @@
+{% extends "shop/base.html" %}
+{% block title %}Список купонов{% endblock %}
+
+{% block content %}
+  <h1>Список купонов</h1>
+  <ul>
+    {% for coupon in coupons %}
+      <li>
+        <strong>{{ coupon.code }}</strong><br>
+        Описание: {{ coupon.description }}<br>
+        Действителен с {{ coupon.valid_from|date:"F d, Y H:i" }} до {{ coupon.valid_to|date:"F d, Y H:i" }}<br>
+        Скидка: {{ coupon.discount }}<br>
+        Активен: {{ coupon.active }}
+      </li>
+    {% empty %}
+      <li>Купонов не найдено.</li>
+    {% endfor %}
+  </ul>
+  <a href="/">Вернуться на главную страницу</a>
+{% endblock %}
