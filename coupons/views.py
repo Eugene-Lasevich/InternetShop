@@ -21,6 +21,6 @@ def coupon_apply(request):
             request.session['coupon_id'] = None
     return redirect('cart:cart_detail')
 
-# def coupon_list(request):
-#     coupons = Coupon.objects.all()
-#     return render(request, 'coupon_list.html', {'coupons': coupons})
+def coupon_list(request):
+    coupons = Coupon.objects.all()
+    return render(request, 'coupon_list.html', {'coupons': coupons})

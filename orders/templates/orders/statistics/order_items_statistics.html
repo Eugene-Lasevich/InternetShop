@@ -1,0 +1,9 @@
+{% extends "shop/base.html" %}
+
+{% block content %}
+  <h1>Статистика продаж элементов заказов</h1>
+  <div>
+    {{ plot_html|safe }}
+  </div>
+  <a href="/">Вернуться на главную страницу</a>
+{% endblock %}

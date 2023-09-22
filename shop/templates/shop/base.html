@@ -20,13 +20,17 @@
     <a href="/store/" class="logo">Магазин  </a>
     <a href="/about/" class="logo">О нас  </a>
     <a href="/articles/" class="logo">Статьи   </a>
-    <a href="/contacts/" class="logo">Сотруднки</a>
-    <a href="/privacy-policy/" class="logo">ПК</a>
-    <a href="/faq/" class="logo">FAQ</a>
-    <a href="/vacancy/" class="logo">Вакансии</a>
-    <a href="/reviews/" class="logo">Отзывы</a>
-    <a href="/coupons/" class="logo">Купоны</a>
+    <a href="/contacts/" class="logo">Сотруднки  </a>
+    <a href="/privacy-policy/" class="logo">ПК  </a>
+    <a href="/faq/" class="logo">FAQ  </a>
+    <a href="/vacancy/" class="logo">Вакансии  </a>
+    <a href="/reviews/" class="logo">Отзывы  </a>
+    <a href="/coupons/" class="logo">Купоны  </a>
 
+    {% if user.is_superuser %}
+            <a href="/orders/statistics/" class="logo">Ст</a>
+            <a href="/orders/statistics1/" class="logo">Ст1</a>
+        {% endif %}
 
 
 

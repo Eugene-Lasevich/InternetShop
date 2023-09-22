@@ -1,0 +1,24 @@
+{% extends "shop/base.html" %}
+
+{% block content %}
+  <h1>Статистика продаж элементов заказов</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Продукт</th>
+        <th>Количество проданных товаров</th>
+        <th>Общая сумма продаж</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in order_items %}
+        <tr>
+          <td>{{ item.product }}</td>
+          <td>{{ item.quantity }}</td>
+          <td>${{ item.get_cost }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <a href="/">Вернуться на главную страницу</a>
+{% endblock %}

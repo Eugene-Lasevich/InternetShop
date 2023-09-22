@@ -5,6 +5,7 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 from coupons.models import Coupon
 
 
+
 class Order(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
