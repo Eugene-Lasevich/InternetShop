@@ -6,23 +6,34 @@
 <div class="company-info">
     <h1>{{ company_info.name }}</h1>
     <p>{{ company_info.description }}</p>
-    
+
     <!-- Видео -->
     <iframe width="560" height="315" src="{{ company_info.video_url }}" frameborder="0" allowfullscreen></iframe>
-    
+
     <!-- Логотип -->
     <img src="{{ company_info.logo.url }}" alt="{{ company_info.name }} Logo">
-    
+
     <!-- История -->
     <h2>История компании</h2>
     <p>{{ company_info.history|linebreaks }}</p>
-    
+
     <!-- Реквизиты -->
     <h2>Реквизиты</h2>
     <p>{{ company_info.contacts|linebreaks }}</p>
-    
+
     <!-- Сертификат -->
     <h2>Сертификат</h2>
-    <img src="{{ company_info.certificate.url }}" alt="{{ company_info.name }} certificate" width="400" height="400">
+    <div class="certificate">
+        <h1>СЕРТИФИКАТ</h1>
+        <p>Настоящим предоставляется сертификат</p>
+        <p>компании</p>
+        <h2>Название вашей компании</h2>
+        <p>за успешное завершение курса</p>
+        <h3>Название курса</h3>
+        <p>Высшего образования</p>
+        <p>Дата выдачи: 23 сентября 2023</p>
+        <p>Подпись:</p>
+        <img src="/путь_к_подписи.png" alt="Подпись">
+    </div>
 </div>
 {% endblock %}
