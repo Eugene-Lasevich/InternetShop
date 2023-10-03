@@ -1,0 +1,24 @@
+/* partners.css */
+.partner-logo {
+    width: 300px; /* Исходная ширина блока */
+    height: 300px; /* Исходная высота блока */
+    border-radius: 50%; /* Задаем круглую форму */
+    overflow: hidden; /* Обрезаем изображение, чтобы оно соответствовало круглому блоку */
+    margin: 10px; /* Отступ между блоками */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Тень */
+    display: flex; /* Используем flex для выравнивания */
+    justify-content: center; /* Горизонтальное выравнивание по центру */
+    align-items: center; /* Вертикальное выравнивание по центру */
+    transition: transform 0.2s; /* Добавляем анимацию масштабирования */
+    background: linear-gradient(to bottom, #e2f5cc, white); /* Градиентный фон от бледно-зеленого к белому */
+}
+
+.partner-logo:hover {
+    transform: scale(1.05); /* Немного увеличиваем масштаб при наведении */
+}
+
+.partner-logo img {
+    max-width: 100%; /* Максимальная ширина изображения */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+    display: block; /* Убираем лишние отступы */
+}

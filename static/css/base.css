@@ -1,32 +1,39 @@
-/* base.css */
-body {
-    background-image: url("{% static 'images/img.png' %}");
-}
-
-#header {
-    background-color: #f2f2f2;
-    padding: 10px;
-    text-align: center;
+/* Стили для header (шапки) */
+header {
+    background-color:#E3E3E3; /* Бледно-зеленый цвет фона шапки */
+    padding: 10px; /* Внутренний отступ */
 }
 
 .logo {
-    text-decoration: none;
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
+    text-decoration: none; /* Убираем подчеркивание у ссылок с классом "logo" */
+    color: #000906; /* Цвет текста ссылок в шапке */
+    margin-right: 20px; /* Отступ между ссылками */
+    font-weight: bold; /* Жирный шрифт для ссылок */
 }
 
+/* Стили для subheader (подшапки) */
 #subheader {
-    background-color: #f9f9f9;
-    padding: 10px;
-    text-align: center;
+    background-color: #E8EBEA; /* Бледно-зеленый цвет фона подшапки */
+    padding: 10px; /* Внутренний отступ */
+    text-align: right; /* Выравнивание текста по правому краю */
 }
 
-.cart {
-    font-size: 18px;
-    color: #999;
+.cart a {
+    text-decoration: none; /* Убираем подчеркивание у ссылок в подшапке */
+    color: #333; /* Цвет текста ссылок */
+    margin-right: 20px; /* Отступ между ссылками */
 }
 
-#content {
-    padding: 20px;
+/* Стили для main (основного содержания) */
+main {
+    padding: 20px; /* Внутренний отступ */
+    background: linear-gradient(to bottom, #F1F6F4	, #EEFEE7); /* Градиент от бледно-зеленого к белому */
+}
+
+/* Стили для footer (подвала) */
+footer {
+    background-color: #cfe8d4; /* Бледно-зеленый цвет фона подвала */
+    color: #fff; /* Цвет текста в подвале */
+    padding: 10px; /* Внутренний отступ */
+    text-align: center; /* Выравнивание текста по центру */
 }

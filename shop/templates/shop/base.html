@@ -9,15 +9,16 @@
     <link href="{% static '/css/detail.css' %}" rel="stylesheet">
     <link href="{% static '/css/create.css' %}" rel="stylesheet">
     <link href="{% static '/css/created.css' %}" rel="stylesheet">
-
+    <link href="{% static '/css/home.css'%}" rel="stylesheet">
+    <link rel="shortcut icon" href="static/images/19.jpg" />
 
 
 
 </head>
-  <link rel="shortcut icon" href="static/images/19.jpg" />
 
-<body background="static/images/img.png">
-<div id="header">
+
+<body >
+<header>
     <a href="/" class="logo">Главная  </a>
     <a href="/store/" class="logo">Магазин  </a>
     <a href="/about/" class="logo">О нас  </a>
@@ -48,7 +49,7 @@
 
 
 
-</div>
+</header>
 <div id="subheader">
     <div class="cart">
         {% with total_items=cart|length %}
@@ -64,10 +65,14 @@
         {% endwith %}
     </div>
 </div>
-<div id="content">
+<main>
     {% block content %}
     {% endblock %}
-</div>
+</main>
 
+<footer>
+    sdfghjkl
+</footer>
 </body>
+
 </html>
