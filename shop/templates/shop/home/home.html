@@ -8,17 +8,20 @@
 <h1>Главная страница</h1>
 
 <!-- Краткая информация о последней статье -->
-<h2>{{ latest_article.title }}</h2>
-<p>{{ latest_article.short_argument }}</p>
-<p>{{ latest_article.date_of_creation }}</p>
-<img src="{{ latest_article.image.url }}" alt="{{ article.title }} Image">
-<p><a href="articles/{{latest_article.id}}">Читать далее</a></p>
+ <div class="latest-article">
+        <h2>{{ latest_article.title }}</h2>
+        <p class="short-argument">{{ latest_article.short_argument }}</p>
+        <p class="date">{{ latest_article.date_of_creation }}</p>
+        <img src="{{ latest_article.image.url }}" alt="{{ latest_article.title }} Image" class="article-image">
+        <p class="read-more"><a href="articles/{{latest_article.id}}">Читать далее</a></p>
+    </div>
 
-<!-- Рекламный баннер -->
-<h2>Реклама</h2>
-<img src="{{ advertisement.image.url }}" alt="{{ advertisement.adv_name }} Banner">
-<a href="{{ advertisement.link }}" target="_blank">Перейти к рекламному ресурсу</a>
-
+    <!-- Рекламный баннер -->
+    <div class="advertisement">
+        <h2>Реклама</h2>
+        <img src="{{ advertisement.image.url }}" alt="{{ advertisement.adv_name }} Banner" class="adv-image">
+        <a href="{{ advertisement.link }}" target="_blank" class="adv-link">Перейти к рекламному ресурсу</a>
+    </div>
 <!-- Список компаний-партнеров -->
  <h2>Наши партнеры</h2>
     <ul class="partners-list">

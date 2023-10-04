@@ -22,3 +22,72 @@
     height: auto; /* Автоматическая высота для сохранения пропорций */
     display: block; /* Убираем лишние отступы */
 }
+.latest-article {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.latest-article h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.latest-article .short-argument {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.latest-article .date {
+    font-style: italic;
+    margin-top: 10px;
+}
+
+.latest-article .article-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+     width: 300px; /* Исходная ширина блока */
+    height: 300px;
+}
+
+.latest-article .read-more {
+    margin-top: 10px;
+}
+
+.advertisement {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.advertisement h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.advertisement .adv-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
+.advertisement .adv-link {
+    margin-top: 10px;
+    display: block;
+}
+
+.advertisement {
+    animation-name: bounce; /* Имя анимации */
+    animation-duration: 1s; /* Длительность анимации (1 секунда) */
+    animation-timing-function: ease-in-out; /* Функция распределения времени */
+    animation-iteration-count: infinite; /* Бесконечное повторение анимации */
+}
+
+/* Определение анимации bounce */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0); /* Начальное и конечное состояния - нет смещения по вертикали */
+    }
+    50% {
+        transform: translateY(-10px); /* Середина анимации - смещение вверх на 10px */
+    }
+}
