@@ -10,7 +10,8 @@
     justify-content: center; /* Горизонтальное выравнивание по центру */
     align-items: center; /* Вертикальное выравнивание по центру */
     transition: transform 0.2s; /* Добавляем анимацию масштабирования */
-    background: linear-gradient(to bottom, #e2f5cc, white); /* Градиентный фон от бледно-зеленого к белому */
+    background: linear-gradient(to bottom, #e2f5cc, white);
+    margin:20px;/* Градиентный фон от бледно-зеленого к белому */
 }
 
 .partner-logo:hover {
@@ -22,6 +23,14 @@
     height: auto; /* Автоматическая высота для сохранения пропорций */
     display: block; /* Убираем лишние отступы */
 }
+.partners-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Центрирование по горизонтали */
+    align-items: center; /* Центрирование по вертикали */
+}
+
+
 .latest-article {
     padding: 20px;
     margin-bottom: 20px;

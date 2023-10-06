@@ -1,10 +1,18 @@
 /* Стили для header (шапки) */
+* {
+    margin: 0;
+    padding: 0;
+}
 
 header {
-    background-color:#E3E3E3; /* Бледно-зеленый цвет фона шапки */
+    background-color: rgba(227, 227, 227, 0.8); /* Полупрозрачный цвет фона шапки */
     padding: 10px; /* Внутренний отступ */
     font-family: 'Old Standard TT', serif;
-
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 2;
 }
 
 .logo {
@@ -24,9 +32,12 @@ header {
 
 /* Стили для subheader (подшапки) */
 #subheader {
-    background-color: #E8EBEA; /* Бледно-зеленый цвет фона подшапки */
-    padding: 10px; /* Внутренний отступ */
-    text-align: right; /* Выравнивание текста по правому краю */
+    background-color: rgba(232, 235, 234, 0.5);    position: fixed;
+    width: 100%;
+    margin: 40px;/* Выравнивание текста по правому краю */
+    left: 0; /* Выравнивание по левому краю */
+    z-index: 2;
+
 }
 
 .cart a {
@@ -42,11 +53,11 @@ main {
     font-family: 'Old Standard TT', serif;
 
 }
-main::after {
+/*main::after {
     content: "";
     display: block;
     min-height: 50vh; /* Высота вашего заполнителя */
-}
+}*/
 
 .logo1 {
     text-decoration: none; /* Убираем подчеркивание у ссылок с классом "logo" */

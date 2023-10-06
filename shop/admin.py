@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Product,Article, Partner, Advertisement, CompanyInfo, Contact, FAQ, Vacancy
+from .models import Category, Product,Article, Partner, Advertisement, CompanyInfo, Contact, FAQ, Vacancy, Review
 
 
 class CategoryAdmin(admin.ModelAdmin):
@@ -47,6 +47,14 @@ class VacancyAdmin(admin.ModelAdmin):
     list_filter = ('publication_date',)
     search_fields = ('title', 'description', 'requirements')
 admin.site.register(Vacancy, VacancyAdmin)
+
+class ReviewAdmin(admin.ModelAdmin):
+    list_display = ('name', 'user', 'rating', 'date_added')
+    list_filter = ('rating',)
+    search_fields = ('name', 'text')
+    date_hierarchy = 'date_added'
+    ordering = ('-date_added',)
+admin.site.register(Review, ReviewAdmin)
 
 
 

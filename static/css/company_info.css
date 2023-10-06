@@ -1,0 +1,114 @@
+/* Стили для компании */
+.company-info {
+    text-align: center;
+}
+
+/* Стили для заголовка компании */
+.company-info h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+/* Стили для описания компании */
+.company-info p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Стили для логотипа компании */
+.company-info img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+/* Стили для видео */
+.company-info iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Стили для истории компании */
+.company-info h2 {
+    font-size: 24px;
+    color: #333;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+.company-info p.linebreaks {
+    font-size: 16px;
+    color: #666;
+    white-space: pre-line;
+    margin-bottom: 30px;
+}
+
+/* Стили для реквизитов */
+.company-info h2 + p {
+    font-size: 18px;
+    color: #333;
+    white-space: pre-line;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+
+/* Стили для сертификата */
+.certificate {
+    border: 15px solid transparent; /* Толщина рамки и цвет рамки (пока прозрачный) */
+    padding: 10px;
+
+    border-image: url('/static/images/img1.png') 40 round; /* Путь к изображению рамки и настройки */
+    border-radius: 20px; /* Закругление углов рамки */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Тень рамки */
+    width:500px;
+    height:600px;
+
+        background: linear-gradient(rgb(255 255 255 / 25%), rgb(255 255 255 / 43%)), radial-gradient(circle, white, #46e4c7ba, #1b22aacf), url(/static/images/img2.png);
+
+    background-size: cover; /* Устанавливает размер фона по размерам элемента */
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    margin: 0px 65vh;
+}
+
+.certificate h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.certificate h2 {
+    font-size: 24px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.certificate h3 {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.certificate .subscribe {
+    display: flex;
+    justify-content: center; /* Выравниваем элементы по горизонтали по центру */
+}
+
+.certificate .subscribe p {
+    font-size: 18px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.certificate .subscribe img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 50px;
+}
