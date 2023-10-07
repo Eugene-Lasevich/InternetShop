@@ -1,0 +1,63 @@
+/* Стили для блока content */
+.content {
+    font-family: Arial, sans-serif; /* Пример шрифта */
+    color: #333; /* Цвет текста */
+    background-color: #eae8e86b;    padding: 20px; /* Внутренний отступ */
+    text-align: left; /* Выравнивание текста по левому краю */
+    max-width: 800px; /* Максимальная ширина блока контента */
+    margin: 0 auto; /* Центрирование блока по горизонтали */
+    line-height: 1.5; /* Межстрочный интервал */
+}
+
+/* Стили для заголовка */
+.content h1 {
+    font-size: 28px; /* Размер шрифта для заголовка */
+    font-weight: bold; /* Жирный шрифт */
+    margin-bottom: 10px; /* Отступ снизу */
+    text-transform: uppercase; /* Преобразование текста заголовка в заглавные буквы */
+}
+
+/* Стили для параграфов */
+.content p {
+    font-size: 16px; /* Размер шрифта для параграфов */
+    margin-bottom: 15px; /* Отступ снизу */
+    word-spacing: 4px; /* Интервал между словами */
+    letter-spacing: 1px; /* Интервал между символами */
+    text-align: justify; /* Выравнивание по ширине */
+    text-indent: 20px; /* Красная строка (отступ первой строки) */
+
+}
+.content p:last-of-type::first-letter {
+    font-size: 19px; /* Размер капители */
+    font-weight: bold; /* Жирный шрифт для капители */
+}
+
+.content p:last-of-type::first-line {
+
+     color: 5f5f5f;
+     font-size: 20px;
+}
+
+/* Стили для изображения */
+.content img {
+    max-width: 100%; /* Максимальная ширина изображения */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+    display: block; /* Убираем лишние отступы */
+    margin: 10px 0; /* Отступы сверху и снизу */
+}
+
+/* Стили для ссылки "Вернуться к статьям" */
+.content a {
+    text-decoration: none; /* Убираем подчеркивание у ссылки */
+    background-color: #3498db; /* Цвет фона ссылки */
+    color: #fff; /* Цвет текста ссылки */
+    padding: 10px 20px; /* Внутренний отступ */
+    border-radius: 5px; /* Закругление углов */
+    display: inline-block; /* Ссылка в виде блока */
+    margin-top: 20px; /* Отступ сверху */
+}
+
+/* Стили для ссылки "Вернуться к статьям" при наведении */
+.content a:hover {
+    background-color: #2980b9; /* Цвет фона при наведении */
+}

@@ -1,4 +1,7 @@
 /* partners.css */
+a{
+text-decoration:none;
+}
 .partner-logo {
     width: 300px; /* Исходная ширина блока */
     height: 300px; /* Исходная высота блока */
@@ -34,6 +37,7 @@
 .latest-article {
     padding: 20px;
     margin-bottom: 20px;
+    position: relative; /* Устанавливаем позиционирование как относительное */
 }
 
 .latest-article h2 {
@@ -55,12 +59,14 @@
     max-width: 100%;
     height: auto;
     margin-top: 10px;
-     width: 300px; /* Исходная ширина блока */
+    width: 300px; /* Исходная ширина блока */
     height: 300px;
 }
 
 .latest-article .read-more {
-    margin-top: 10px;
+    position: absolute; /* Устанавливаем позиционирование как абсолютное */
+    bottom: 10px; /* Располагаем кнопку внизу блока */
+    left: 20px; /* Располагаем кнопку слева с отступом */
 }
 
 .advertisement {

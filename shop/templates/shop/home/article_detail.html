@@ -1,14 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>{{ article.title }}</title>
-</head>
-<body>
-    <h1>{{ article.title }}</h1>
-    <p>{{ article.short_argument }}</p>
-    <p>{{ article.date_of_creation }}</p>
-    <img src="{{ article.image.url }}" alt="{{ article.title }} Image">
-    <p>{{ article.content }}</p>
-    <a href="/articles">Вернуться к статьям</a>
-</body>
-</html>
+{% extends "shop/base.html" %}
+
+{% block title %}
+    {{article.title}}
+{% endblock %}
+
+{% block content %}
+
+        <div class="content">
+            <h1>{{ article.title }}</h1>
+            <p>{{ article.short_argument }}</p>
+            <p>{{ article.date_of_creation }}</p>
+            <img src="{{ article.image.url }}" alt="{{ article.title }} Image">
+            <p>{{ article.content }}</p>
+            <a href="/articles">Вернуться к статьям</a>
+        </div>
+
+{% endblock %}

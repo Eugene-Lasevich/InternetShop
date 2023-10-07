@@ -50,7 +50,7 @@ class Product(models.Model):
 class Article(models.Model):
     title = models.CharField(max_length=200,
                              help_text='Enter article title')
-    short_argument = models.CharField(max_length=100)
+    short_argument = models.CharField(max_length=300)
     content = models.TextField()
     image = models.ImageField(upload_to='article')
     date_of_creation = models.DateTimeField(auto_now_add=True)

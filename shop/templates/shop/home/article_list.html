@@ -5,13 +5,14 @@
 {% block content %}
 <h1>Список статей</h1>
 
-<ul>
+<ul class="article-list">
     {% for article in articles %}
-        <li>
+        <li class="article">
             <h2><a href="{{ article.id }}">{{ article.title }}</a></h2>
-            <p>{{ article.short_argument }}</p>
-            <p>{{ article.date_of_creation }}</p>
+            <p class="short-argument">{{ article.short_argument }}</p>
+            <p class="date">{{ article.date_of_creation }}</p>
             <img src="{{ article.image.url }}" alt="{{ article.title }} Image">
+            <a class="read-more" href="{{ article.id }}">Читать далее</a>
         </li>
     {% endfor %}
 </ul>

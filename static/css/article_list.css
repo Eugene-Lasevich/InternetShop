@@ -1,0 +1,62 @@
+.article-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.article {
+    width: calc(33.33% - 20px); /* Определяем ширину для каждой статьи (в 3 колонки) */
+    margin: 10px;
+    background-color: rgba(66, 219, 50, 0.05);
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.article h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.article .short-argument {
+  font-size: 16px;
+  line-height: 1.5;
+  max-height: 40px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap
+}
+
+.article .date {
+    font-size: 16px;
+    color: #888;
+    margin-top: 10px;
+}
+
+.article img {
+    width: 300px;
+    height: 300px;
+    display: block;
+    margin-top: 10px;
+    max-width: 100%;
+
+    display: block;
+    margin-top: 10px;
+}
+
+.read-more {
+    display: inline-block;
+    background-color: rgba(66, 219, 50, 0.5);    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: background-color 0.3s; /* Плавное изменение цвета фона */
+
+}
+
+.read-more:hover {
+    background-color: rgba(66, 219, 50, 1); /* Измененный цвет при наведении */
+}
+
