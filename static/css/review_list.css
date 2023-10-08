@@ -1,0 +1,61 @@
+/* styles for reviews page */
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+li h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* styles for primary button */
+.btn-primary {
+    background-color: #67E667;
+}
+
+/* styles for links "login" and "register" */
+a {
+    text-decoration: underline;
+    color: #007BFF;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* styles for rating */
+.rating {
+    display: inline-block;
+    background-color: #f8f9fa;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+}

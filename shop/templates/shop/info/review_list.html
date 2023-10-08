@@ -1,8 +1,12 @@
 {% extends "shop/base.html" %}
+{% load static %}
+
 
 {% block title %}Список отзывов{% endblock %}
 
 {% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/review_list.css' %}">
+
 <h1>Список отзывов</h1>
 
 <ul>
