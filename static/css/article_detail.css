@@ -38,6 +38,27 @@
      font-size: 20px;
 }
 
+.content p:last-of-type::selection {
+    background-color: #67E667; /* Цвет фона выделенного текста */
+    color: #fff; /* Цвет текста выделенного текста */
+}
+
+.content p:last-of-type::after {
+    content: " Конец.";
+    font-weight: bold;
+    color: #e74c3c;
+    right: 0;
+    bottom: 0;
+}
+.content p:last-of-type::before {
+    content: "Начало: ";
+    font-weight: bold;
+    color: #e74c3c;
+    left: 0;
+    top: 0;
+}
+
+
 /* Стили для изображения */
 .content img {
     max-width: 100%; /* Максимальная ширина изображения */

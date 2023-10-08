@@ -1,60 +1,93 @@
-/* product-list.css */
-        /* Стили для боковой панели */
-        #sidebar {
-            width: 200px;
-            float: left;
-        }
+/* list.css */
 
-        #sidebar h3 {
-            margin-bottom: 10px;
-        }
+/* Стили для боковой панели (sidebar) */
+#sidebar {
+    width: 200px; /* Ширина сайдбара */
+    float: left; /* Выравниваем сайдбар слева */
+}
 
-        #sidebar ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
+/* Стили для основного содержимого (списка продуктов) */
+#main {
+    margin-left: 220px; /* Отступ слева, чтобы учесть ширину сайдбара */
+}
 
-        #sidebar li {
-            margin-bottom: 5px;
-        }
+/* Стили для списка продуктов (grid) */
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Три колонки в каждой строке */
+    gap: 20px; /* Пространство между элементами списка */
+}
 
-        #sidebar li a {
-            text-decoration: none;
-            color: #000;
-        }
+.item {
+    background-color: rgba(66, 219, 50, 0.05);
+    border-radius: 10px;
+    padding: 15px;
+    box-sizing: border-box;
+}
 
-        #sidebar li.selected {
-            font-weight: bold;
-        }
+.item a {
+    text-decoration: none;
+    color: #000;
+}
 
-        /* Стили для основного содержимого */
-        #main {
-            margin-left: 220px;
-        }
+.item img {
+    width: 300px;
+    height: 300px;
+    opacity: 0.9; /* Прозрачность изображения (значение от 0 до 1) */
+    transition: opacity 0.3s;
+}
 
-        /* Стили для списка товаров */
-        .product-list {
-            display: flex;
-            flex-wrap: wrap;
-        }
+.item:hover img {
+    opacity: 1; /* При наведении делаем изображение полностью видимым */
+}
+.item .item-info {
+    margin-top: 10px;
+    font-size: 16px;
+}
 
-        .item {
-            width: 200px;
-            margin-right: 20px;
-            margin-bottom: 20px;
-        }
+/* Остальные стили для боковой панели оставляем как есть */
+#sidebar h3 {
+    margin-bottom: 10px;
+}
 
-        .item a {
-            text-decoration: none;
-            color: #000;
-        }
+#sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
 
-        .item img {
-            width: 100%;
-            height: auto;
-        }
+#sidebar li {
+    margin-bottom: 5px;
+}
 
-        .item .item-info {
-            margin-top: 10px;
-        }
+#sidebar li a {
+    text-decoration: none;
+    color: #000;
+}
+
+#sidebar li.selected {
+    font-weight: bold;
+}
+
+/* Поддержка для мобильных устройств (медиа-запросы) */
+@media (max-width: 768px) {
+    #sidebar {
+        width: 100%; /* Занимает всю ширину экрана на мобильных устройствах */
+        float: none; /* Отменяет выравнивание слева */
+        margin-bottom: 20px; /* Добавляет отступ снизу, чтобы разделить сайдбар и контент */
+    }
+
+    #main {
+        margin-left: 0; /* Убираем отступ слева на мобильных устройствах */
+    }
+
+    /* Убираем сетку и отступы между элементами на мобильных устройствах */
+    .product-list {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .item {
+        margin-bottom: 0;
+    }
+}

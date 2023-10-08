@@ -1,0 +1,33 @@
+/* Стили для FAQ */
+.faq-list {
+    list-style: none;
+    padding: 0;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.faq-question {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.faq-answer {
+    display: none;
+    font-size: 16px;
+}
+
+/* Стили для отображения даты */
+.faq-item p:last-child {
+    font-size: 14px;
+    color: #888;
+}
+
+/* Стили для разворачивания ответов */
+.faq-item:target .faq-answer {
+    display: block;
+}

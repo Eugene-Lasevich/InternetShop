@@ -1,17 +1,31 @@
 .article-list {
     list-style: none;
     padding: 0;
-    display: flex;
-    flex-wrap: wrap;
+    column-width: calc(33.33% - 20px); /* Ширина каждой колонки (в 3 колонки) */
+    column-gap: 20px; /* Отступ между колонками */
+    column-count: 2;
+    @media (max-width: 768px) {
+        column-count: 1;
+    }
+
+    /* Медиа-запрос для мобильных устройств */
+
 }
 
 .article {
-    width: calc(33.33% - 20px); /* Определяем ширину для каждой статьи (в 3 колонки) */
-    margin: 10px;
     background-color: rgba(66, 219, 50, 0.05);
     border-radius: 10px;
-    padding: 20px;
+    padding: 15px;
     box-sizing: border-box;
+    margin: 0 0 20px; /* Отступ между статьями */
+    break-inside: avoid; /* Предотвращаем разрывы статей между колонками */
+    width: auto; /* Ширина блока должна быть 100% внутри колонок */
+    height: 500px; /* Убираем фиксированную высоту, чтобы блоки могли растягиваться */
+    display: flex;
+    flex-direction: column; /* Располагаем контент вертикально */
+     @media (max-width: 768px) {
+    background-color: rgba(80, 250, 50, 0.2);
+    }
 }
 
 .article h2 {
@@ -20,43 +34,38 @@
 }
 
 .article .short-argument {
-  font-size: 16px;
-  line-height: 1.5;
-  max-height: 40px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap
+    font-size: 16px;
+    line-height: 1.5;
+    max-height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .article .date {
     font-size: 16px;
     color: #888;
-    margin-top: 10px;
+    margin-top: auto; /* Выравниваем дату внизу блока */
 }
 
 .article img {
-    width: 300px;
-    height: 300px;
-    display: block;
-    margin-top: 10px;
-    max-width: 100%;
-
-    display: block;
+    width: 300px; /* Ширина картинки равна ширине блока */
+    height: 300px; /* Автоматическая высота для сохранения пропорций */
     margin-top: 10px;
 }
 
 .read-more {
     display: inline-block;
-    background-color: rgba(66, 219, 50, 0.5);    color: #fff;
+    background-color: rgba(66, 219, 50, 0.5);
+    color: #fff;
     padding: 5px 10px;
     border-radius: 5px;
     text-decoration: none;
-    margin-top: 10px;
+    margin-top: auto; /* Выравниваем кнопку внизу блока */
     transition: background-color 0.3s; /* Плавное изменение цвета фона */
-
 }
 
 .read-more:hover {
-    background-color: rgba(66, 219, 50, 1); /* Измененный цвет при наведении */
+    background-color: rgba(66, 219, 50, 1);
+    cursor: crosshair/* Измененный цвет при наведении */
 }
-
