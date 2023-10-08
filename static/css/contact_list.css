@@ -1,0 +1,30 @@
+/* Стили для контейнера контактов */
+.contacts-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Пространство между контактами */
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column; /* Располагаем информацию о контакте вертикально */
+    align-items: center; /* Выравниваем по центру по горизонтали */
+    text-align: center; /* Выравниваем текст по центру */
+    width: 300px; /* Ширина контейнера контакта */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.contact-info {
+    flex-grow: 1; /* Растягиваем информацию о контакте по вертикали */
+}
+
+.contact-photo img {
+    width: 100%;
+    max-width: 200px; /* Максимальная ширина фотографии */
+    height: auto;
+    border-radius: 50%; /* Задаем круглую форму фотографии */
+}

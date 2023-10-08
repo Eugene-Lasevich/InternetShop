@@ -5,17 +5,21 @@
 {% block content %}
 <h1>Сотрудники</h1>
 
-<ul>
+<ul class="contacts-list">
     {% for contact in contacts %}
-        <li>
-            <h2>{{ contact.first_name }} {{ contact.last_name }}</h2>
-            <p>{{ contact.job_title }}</p>
-            <p>{{ contact.description }}</p>
-            <p>Телефон: {{ contact.phone }}</p>
-            <p>Email: <a href="mailto:{{ contact.email }}">{{ contact.email }}</a></p>
-            <p>Сайт: <a href="{{ contact.website }}" target="_blank">{{ contact.website }}</a></p>
+        <li class="contact-item">
+            <div class="contact-info">
+                <h2>{{ contact.first_name }} {{ contact.last_name }}</h2>
+                <p>{{ contact.job_title }}</p>
+                <p>{{ contact.description }}</p>
+                <p>Телефон: {{ contact.phone }}</p>
+                <p>Email: <a href="mailto:{{ contact.email }}">{{ contact.email }}</a></p>
+                <p>Сайт: <a href="{{ contact.website }}" target="_blank">{{ contact.website }}</a></p>
+            </div>
             {% if contact.photo %}
-                <img src="{{ contact.photo.url }}" alt="{{ contact.first_name }} {{ contact.last_name }} Photo" width="350" height="350">
+                <div class="contact-photo">
+                    <img src="{{ contact.photo.url }}" alt="{{ contact.first_name }} {{ contact.last_name }} Photo" width="350" height="350">
+                </div>
             {% endif %}
         </li>
     {% endfor %}

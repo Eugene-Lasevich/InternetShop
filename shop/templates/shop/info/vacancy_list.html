@@ -1,8 +1,11 @@
 {% extends "shop/base.html" %}
+{% load static %}
 
 {% block title %}Список вакансий{% endblock %}
 
 {% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/vacancy_list.css' %}">
+
 <h1>Список вакансий</h1>
 
 <ul>
