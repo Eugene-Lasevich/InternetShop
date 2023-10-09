@@ -1,7 +1,11 @@
 {% extends "shop/base.html" %}
+{% load static %}
+
 {% block title %}Список купонов{% endblock %}
 
 {% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/coupons.css' %}">
+
   <h1>Список купонов</h1>
   <ul>
     {% for coupon in coupons %}

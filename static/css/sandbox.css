@@ -1,0 +1,377 @@
+/* styles.css */
+
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Заголовок страницы */
+h1 {
+    text-align: center;
+    font-size: 32px;
+    margin-top: 20px;
+}
+
+/* Выделенный текст */
+strong {
+    color: #FF0000; /* Красный цвет */
+}
+
+/* Цитата */
+q {
+    font-style: italic;
+}
+
+/* Блок цитаты */
+blockquote {
+    font-style: italic;
+    border-left: 2px solid #007BFF; /* Синяя линия слева */
+    padding-left: 10px;
+    margin: 20px 0;
+}
+
+/* Определение (dfn) */
+dfn {
+    font-style: italic;
+}
+
+/* Пример кода */
+pre {
+    background-color: #F5F5F5; /* Светло-серый фон */
+    padding: 10px;
+    overflow-x: auto; /* Появление горизонтальной прокрутки при необходимости */
+}
+
+code {
+    font-family: monospace; /* Моноширинный шрифт */
+    font-size: 14px;
+}
+
+/* Время */
+time {
+    font-style: italic;
+}
+
+/* Стили для четверостишия */
+p br {
+    margin-bottom: 10px;
+}
+
+/* Ссылки */
+a {
+    text-decoration: none; /* Убираем подчеркивание ссылок */
+    color: #007BFF; /* Синий цвет ссылок */
+}
+
+a:hover {
+    text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+/* Контейнер */
+.container {
+    background-color: #F0F0F0; /* Светло-серый фон контейнера */
+    padding: 10px;
+    margin: 20px 0;
+}
+
+/* Список */
+ul {
+    list-style: disc; /* Маркеры списка - круглые точки */
+    margin-left: 20px; /* Отступ слева для списка */
+}
+
+/* Элемент списка */
+li {
+    margin-bottom: 10px;
+}
+
+/* Фигура */
+figure {
+    text-align: center;
+}
+
+/* Подпись к фигуре */
+figcaption {
+    font-style: italic;
+    font-size: 14px;
+}
+
+/* Навигация */
+nav ul {
+    list-style: none; /* Убираем маркеры списка */
+    padding: 0;
+}
+
+nav li {
+    margin-bottom: 10px;
+}
+
+/* Таблица */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Объединение границ ячеек */
+}
+
+table, th, td {
+    border: 1px solid #DDD; /* Серый цвет границ таблицы */
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+/* Заголовок таблицы */
+th {
+    background-color: #007BFF; /* Синий фон заголовка */
+    color: #FFF; /* Белый цвет текста заголовка */
+}
+
+/* Форма */
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block; /* Каждая метка на новой строке */
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #DDD;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    background-color: #007BFF;
+    color: #FFF;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056B3;
+}
+
+/* Изображение */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Видео и аудио */
+video,
+audio {
+    max-width: 100%;
+}
+
+/* Селектор элементов */
+.element-selector {
+    font-weight: bold;
+}
+
+/* Селектор атрибутов (начинается с подстроки) */
+[class^="attribute-starts-with"] {
+    color: blue;
+}
+
+/* Селектор атрибутов (заканчивается подстрокой) */
+[class$="attribute-ends-with"] {
+    color: green;
+}
+
+/* Селектор атрибутов (с определенным значением) */
+[class="attribute-exact-value"] {
+    border: 1px solid red;
+}
+
+/* Селектор классов */
+.class-selector {
+    background-color: yellow;
+}
+
+/* Комбинации селекторов (объединение) */
+.element-selector.combination-selector {
+    text-decoration: underline;
+}
+
+/* Селекторы потомков */
+.descendant-selector p {
+    font-style: italic;
+}
+
+/* Селекторы дочерних элементов */
+.child-selector > h2 {
+    font-size: 24px;
+}
+
+/* Оформление для первого элемента */
+.custom-list li:first-child {
+    color: red;
+    list-style: "\2713"; /* Unicode символ "✓" */
+}
+
+/* Оформление для последнего элемента */
+.custom-list li:last-child {
+    color: red;
+    list-style: "\2713"; /* Unicode символ "✓" */
+}
+
+/* Оформление для каждого третьего элемента */
+.custom-list li:nth-child(3n) {
+    color: yellow;
+     content: "\2666"; /* Код Unicode символа */
+    font-size: 24px;
+}
+
+/* Оформление для каждого четвертого элемента */
+.custom-list li:nth-child(4n) {
+    color: green;
+    list-style: "\2713"; /* Unicode символ "✓" */
+}
+
+/* Стили для доступных элементов */
+input:enabled {
+    border: 2px solid green;
+}
+
+/* Стили для заблокированных элементов */
+input:disabled {
+    background-color: #ccc;
+    color: #999;
+}
+
+/* Стили для обязательных элементов */
+input[required] {
+    border: 2px solid red;
+}
+
+/* Стили для элементов со значениями вне диапазона */
+.out-of-range {
+    background-color: yellow;
+}
+
+/* Стили для включенных флажков и переключателей */
+input[type="checkbox"]:checked,
+input[type="radio"]:checked {
+    color: blue;
+    background-color: #f0f0f0; /* Фоновый цвет для включенных элементов */
+    border: 2px solid blue; /* Граница для включенных элементов */
+    border-radius: 5px; /* Скругление углов границы */
+    padding: 5px; /* Внутренний отступ для содержимого элемента */
+    box-shadow: 0 0 5px rgba(0, 0, 255, 0.5); /* Тень для включенных элементов */
+    transition: background-color 0.3s, border 0.3s, color 0.3s; /* Плавное изменение стилей при наведении */
+}
+
+/* Стили для выключенных флажков и переключателей */
+input[type="checkbox"]:not(:checked),
+input[type="radio"]:not(:checked) {
+    color: gray;
+    background-color: red; /* Фоновый цвет для выключенных элементов */
+    border: 2px solid #ccc; /* Граница для выключенных элементов */
+    border-radius: 5px; /* Скругление углов границы */
+    padding: 5px; /* Внутренний отступ для содержимого элемента */
+    transition: background-color 0.3s, border 0.3s, color 0.3s; /* Плавное изменение стилей при наведении */
+}
+
+/* Стили для выключенных элементов при наведении курсора */
+input[type="checkbox"]:not(:checked):hover,
+input[type="radio"]:not(:checked):hover {
+    background-color: #e0e0e0; /* Изменение фонового цвета при наведении */
+    cursor: not-allowed; /* Изменение курсора при наведении на выключенные элементы */
+}
+
+/* Стили для таблицы */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px auto;
+  text-align: center;
+}
+
+/* Стили для заголовков таблицы */
+th {
+  background-color: #f2f2f2;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+/* Стили для ячеек таблицы */
+td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* Стили для строк с четными номерами */
+tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+/* Стили для пустых ячеек */
+td:empty {
+  background-color: #ddd;
+}
+
+/* Стили для объединенных ячеек */
+td[colspan] {
+  background-color: #ffcc00;
+}
+blockquote {
+  margin: 20px;
+  padding: 10px;
+  border-left: 2px solid #333;
+  font-style: italic;
+  position: relative;
+}
+
+/* Стили для кавычек в зависимости от языка */
+blockquote[lang="en"]:before {
+  content: "“";
+  position: absolute;
+  left: -20px;
+  top: -10px;
+  font-size: 24px;
+}
+
+blockquote[lang="en"]:after {
+  content: "”";
+  font-size: 24px;
+}
+
+blockquote[lang="fr"]:before {
+  content: "«";
+  position: absolute;
+  left: -20px;
+  top: -10px;
+  font-size: 24px;
+}
+
+blockquote[lang="fr"]:after {
+  content: "»";
+  font-size: 24px;
+}
+
+blockquote[lang="es"]:before {
+  content: "‘";
+  position: absolute;
+  left: -20px;
+  top: -10px;
+  font-size: 24px;
+}
+
+blockquote[lang="es"]:after {
+  content: "’";
+  font-size: 24px;
+}

@@ -1,0 +1,28 @@
+/* styles.css */
+
+
+/* Стили для заголовка */
+
+body {
+    font-family: Arial, sans-serif; /* Arial - стандартный шрифт без засечек, sans-serif - альтернативный вариант */
+}
+h1 {
+    font-size: 32px; /* Увеличьте размер шрифта по желанию */
+    font-weight: bold;
+    text-align: center; /* Выравнивание по центру */
+    margin-bottom: 20px; /* Отступ снизу */
+}
+
+/* Стили для основного контента */
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: justify; /* Выравнивание по ширине */
+    margin-bottom: 20px;
+    text-indent: 20px; /* Красная строка (отступ первой строки) */
+}
+
+/
+
+
+/* Стили для ссылки "Вернуться на главную страницу" */

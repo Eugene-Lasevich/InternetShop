@@ -94,8 +94,27 @@
 
         {% endif %}
         <a href="/privacy-policy/" class="logo1">ПК  </a>
+        <span class="current-time" id="current-time"></span>
+
 
 </footer>
+<script>
+    function updateCurrentTime() {
+        const currentTimeElement = document.getElementById('current-time');
+        const now = new Date();
+        const hours = now.getHours().toString().padStart(2, '0');
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        const seconds = now.getSeconds().toString().padStart(2, '0');
+        const currentTimeString = `${hours}:${minutes}:${seconds}`;
+        currentTimeElement.textContent = currentTimeString;
+    }
+
+    // Обновление текущего времени каждую секунду
+    setInterval(updateCurrentTime, 1000);
+
+    // Инициализация текущего времени
+    updateCurrentTime();
+</script>
 </body>
 
 </html>

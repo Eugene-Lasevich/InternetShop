@@ -1,6 +1,10 @@
 {% extends "shop/base.html" %}
+{% load static %}
+
 
 {% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/statistics.css' %}">
+
   <h1>Статистика продаж элементов заказов</h1>
   <table>
     <thead>

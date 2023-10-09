@@ -1,0 +1,43 @@
+/* styles.css */
+
+/* Стили для полупрозрачного фона */
+body {
+    background-color: rgba(255, 255, 255, 0.9);
+    font-family: Arial, sans-serif;
+}
+
+/* Стили для заголовка списка */
+h1 {
+    font-size: 24px;
+
+}
+
+/* Стили для списка купонов */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1); /* Полупрозрачный фон для элементов списка */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+li strong {
+    font-size: 18px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Стили для дополнительной информации о купоне */
+li p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+/* Стили для ссылки "Вернуться на главную страницу" */
+
