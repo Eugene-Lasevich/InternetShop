@@ -64,7 +64,7 @@
 
     border-image: url('/static/images/img1.png') 40 round; /* Путь к изображению рамки и настройки */
     border-radius: 20px; /* Закругление углов рамки */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Тень рамки */
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Тень рамки */
     width:500px;
     height:600px;
 

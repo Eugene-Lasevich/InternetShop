@@ -1,31 +1,33 @@
 /* partners.css */
-a{
-text-decoration:none;
+a {
+    text-decoration: none;
 }
+
 .partner-logo {
     width: 300px; /* Исходная ширина блока */
     height: 300px; /* Исходная высота блока */
     border-radius: 50%; /* Задаем круглую форму */
     overflow: hidden; /* Обрезаем изображение, чтобы оно соответствовало круглому блоку */
-    margin: 10px; /* Отступ между блоками */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Тень */
     display: flex; /* Используем flex для выравнивания */
     justify-content: center; /* Горизонтальное выравнивание по центру */
     align-items: center; /* Вертикальное выравнивание по центру */
-    transition: transform 0.2s; /* Добавляем анимацию масштабирования */
     background: linear-gradient(to bottom, #e2f5cc, white);
-    margin:20px;/* Градиентный фон от бледно-зеленого к белому */
+    margin: 20px; /* Градиентный фон от бледно-зеленого к белому */
+    perspective: 1000px; /* Добавляем 3D-перспективу */
+    transform-style: preserve-3d; /* Сохраняем 3D-перспективу */
+    transition: transform 0.2s; /* Добавляем анимацию масштабирования */
+
 }
 
-.partner-logo:hover {
-    transform: scale(1.05); /* Немного увеличиваем масштаб при наведении */
-}
 
 .partner-logo img {
     max-width: 100%; /* Максимальная ширина изображения */
     height: auto; /* Автоматическая высота для сохранения пропорций */
     display: block; /* Убираем лишние отступы */
+    transform: translateZ(900px)
 }
+
 .partners-list {
     display: flex;
     flex-wrap: wrap;
@@ -80,8 +82,8 @@ text-decoration:none;
 }
 
 .advertisement .adv-image {
-    max-width: 100%;
-    height: auto;
+    max-width: 300px;
+    height: 300px;
     margin-top: 10px;
 }
 
@@ -89,6 +91,8 @@ text-decoration:none;
     margin-top: 10px;
     display: block;
 }
+
+
 
 .advertisement {
     animation-name: bounce; /* Имя анимации */
@@ -106,3 +110,24 @@ text-decoration:none;
         transform: translateY(-10px); /* Середина анимации - смещение вверх на 10px */
     }
 }
+
+
+.advertisements-list {
+    position: relative;
+    width: 350px; /* Задайте желаемую ширину и высоту для контейнера */
+    height: 350px;
+    overflow: hidden;
+}
+
+.advertisement {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.advertisement.active {
+    opacity: 1;
+}
+

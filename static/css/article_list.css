@@ -23,9 +23,13 @@
     height: 500px; /* Убираем фиксированную высоту, чтобы блоки могли растягиваться */
     display: flex;
     flex-direction: column; /* Располагаем контент вертикально */
-     @media (max-width: 768px) {
-    background-color: rgba(80, 250, 50, 0.2);
+    @media (max-width: 768px) {
+        background-color: rgba(80, 250, 50, 0.2);
     }
+    perspective: 1000px; /* Добавляем 3D-перспективу */
+    transform-style: preserve-3d; /* Сохраняем 3D-перспективу */
+    transition: transform 0.2s; /* Добавляем анимацию масштабирования */
+    transition: opacity 0.7s ease;
 }
 
 .article h2 {
@@ -67,5 +71,5 @@
 
 .read-more:hover {
     background-color: rgba(66, 219, 50, 1);
-    cursor: crosshair/* Измененный цвет при наведении */
+    cursor: crosshair
 }
