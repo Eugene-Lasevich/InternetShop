@@ -36,5 +36,16 @@
         {% endfor %}
     </div>
     <a href="/">Вернуться к списку статей</a>
+<div id="coupon-section">
+        <button onclick="openCouponForm()">Apply Coupon</button>
+        <button onclick="resetPrices()">Reset Prices</button>
+    </div>
+    <div id="coupon-form" style="display: none;">
+        <label for="coupon-percent">Enter discount percentage:</label>
+        <input type="number" id="coupon-percent" min="0" max="99">
+        <button onclick="applyCoupon()">Apply</button>
+    </div>
+
+    <script src="{% static '/js/coupons.js' %}"></script>
 
 {% endblock %}
