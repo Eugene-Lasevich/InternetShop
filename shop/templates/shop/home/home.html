@@ -5,6 +5,8 @@
 {% block title %}Главная страница{% endblock %}
 
 {% block content %}
+<!--<script src="{% static '/js/home.js' %}"></script>-->
+
 <h1>Главная страница</h1>
 
 <!-- Краткая информация о последней статье -->
@@ -17,11 +19,34 @@
     </div>
 
     <!-- Рекламный баннер -->
-    <div class="advertisement">
-        <h2>Реклама</h2>
-        <img src="{{ advertisement.image.url }}" alt="{{ advertisement.adv_name }} Banner" class="adv-image">
-        <a href="{{ advertisement.link }}" target="_blank" class="adv-link">Перейти к рекламному ресурсу</a>
-    </div>
+
+<!--<div class="advertisements-list">-->
+<!--    {% for advertisement in advertisements %}-->
+<!--        <div class="advertisement">-->
+<!--            <h2>Реклама</h2>-->
+<!--            <img src="{{ advertisement.image.url }}" alt="{{ advertisement.adv_name }} Banner" class="adv-image">-->
+<!--            <a href="{{ advertisement.link }}" target="_blank" class="adv-link">Перейти к рекламному ресурсу</a>-->
+<!--        </div>-->
+<!--    {% endfor %}-->
+<!--</div>-->
+<div class="advertisements-list">
+    {% for advertisement in advertisements %}
+        <div class="advertisement{% if forloop.first %} active{% endif %}">
+            <h2>Реклама</h2>
+            <img src="{{ advertisement.image.url }}" alt="{{ advertisement.adv_name }} Banner" class="adv-image">
+            <a href="{{ advertisement.link }}" target="_blank" class="adv-link">Перейти к рекламному ресурсу</a>
+        </div>
+    {% endfor %}
+</div>
+
+
+<!-- Элементы управления интервалом ротации -->
+<form id="banner-rotation-form">
+    <label for="rotation-interval">Интервал (секунды):</label>
+    <input type="number" id="rotation-interval" name="rotation-interval" value="5">
+    <input type="button" value="Применить" id="apply-interval">
+</form>
+
 <!-- Список компаний-партнеров -->
  <h2>Наши партнеры</h2>
 <div class="partners-list">
@@ -33,4 +58,8 @@
         </div>
     {% endfor %}
 </div>
+<script src="{% static '/js/home.js' %}"></script>
+<script src="{% static '/js/advertisement.js' %}"></script>
+
+
 {% endblock %}

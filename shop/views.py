@@ -36,12 +36,12 @@ def home(request):
 
     # Получите список компаний-партнеров
     partners = Partner.objects.all()
-    advertisement = Advertisement.objects.first()
+    advertisements = Advertisement.objects.all()
 
     context = {
         'latest_article': latest_article,
         'partners': partners,
-        'advertisement': advertisement,  # Добавьте рекламу в контекст
+        'advertisements': advertisements,  # Добавьте рекламу в контекст
     }
 
     return render(request, 'shop/home/home.html', context)

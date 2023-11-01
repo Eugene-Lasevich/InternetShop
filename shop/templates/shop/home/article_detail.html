@@ -1,4 +1,5 @@
 {% extends "shop/base.html" %}
+{% load static %}
 
 {% block title %}
     {{article.title}}
@@ -14,5 +15,7 @@
             <p>{{ article.content }}</p>
             <a href="/articles">Вернуться к статьям</a>
         </div>
+        <button id="open-settings" onclick="openSettingsWindow()">Изменить настройки</button>
+<script src="{% static '/js/article_detail.js' %}"></script>
 
 {% endblock %}
