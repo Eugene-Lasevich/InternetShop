@@ -152,6 +152,9 @@ def add_review(request):
 def example_view(request):
     return render(request, 'shop/sandbox/example.html')
 
+def example_view_1(request):
+    return render(request, 'shop/sandbox/example1.html')
+
 
 
 

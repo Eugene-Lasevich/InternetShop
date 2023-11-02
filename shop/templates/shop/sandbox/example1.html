@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Описание вашего сайта">
+    <meta name="keywords" content="Ключевые слова">
+
+
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/sandboxJS.css' %}">
+</head>
+<body>
+ <form id="dateForm">
+        <label for="dates">Месяцы и числа:</label>
+        <input type="text" id="dates" name="dates" placeholder="Например: май 1, июнь 15, июль 5">
+        <br>
+        <input type="button" value="Обработать все месяцы" onclick="processDates()">
+        <input type="button" value="Очистить поле" onclick="clearField()">
+
+    </form>
+<h1>Dynamic Table</h1>
+    <div>
+        <label for="table-size">Table Size: </label>
+        <input type="number" id="table-size">
+        <button onclick="createTable()">Create Table</button>
+        <label for="max-highlights">Max Highlights: </label>
+        <input type="number" id="max-highlights">
+        <button onclick="applyMaxHighlights()">Apply Max Highlights</button>
+        <button onclick="addRow()">Add Row</button>
+        <button onclick="addColumn()">Add Column</button>
+        <button onclick="transposeTable()">Transpose Table</button>
+    </div>
+    <table id="table">
+    </table>
+<script src="{% static '/js/table.js' %}"></script>
+</body>
+</html>

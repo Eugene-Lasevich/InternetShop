@@ -1,0 +1,27 @@
+table {
+    border-collapse: collapse;
+    margin: 10px;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+.highlight-multiple {
+    background-color: lightgreen;
+}
+
+.highlighted-even {
+    background-color: lightblue;
+}
+
+.highlighted-odd {
+    background-color: lightpink;
+}
+
+
