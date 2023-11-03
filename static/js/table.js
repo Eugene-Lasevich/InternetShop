@@ -48,11 +48,11 @@ function transposeTable() {
     }
   }
 
-  var rowss = table.getElementsByTagName("tr");
+  let rowss = table.getElementsByTagName("tr");
 
 
   for (let i = 0; i < rowss.length; i++) {
-    var _cells = rowss[i].getElementsByTagName("td");
+    let _cells = rowss[i].getElementsByTagName("td");
     for (let j = 0; j < _cells.length; j++) {
         table.getElementsByTagName("tr")[i].getElementsByTagName("td")[j].addEventListener("click", () => toggleCellSelection(table.getElementsByTagName("tr")[i].getElementsByTagName("td")[j]));
 
@@ -93,12 +93,12 @@ function canSelectCell(cell) {
   const row = cell.parentNode;
   const cellsInRow = row.cells;
 
-  var r = check_row(rowIndex);
-  var c = check_collumn(cellIndex);
-  var n1 = check_up(rowIndex, cellIndex);
-  var n2 = check_down(rowIndex, cellIndex);
-  var n3 = check_left(rowIndex, cellIndex);
-  var n4 = check_right(rowIndex, cellIndex);
+  let r = check_row(rowIndex);
+  let c = check_collumn(cellIndex);
+  let n1 = check_up(rowIndex, cellIndex);
+  let n2 = check_down(rowIndex, cellIndex);
+  let n3 = check_left(rowIndex, cellIndex);
+  let n4 = check_right(rowIndex, cellIndex);
 
   //console.log(r, c);
   //console.log(n1, n2, n3, n4);
@@ -122,14 +122,14 @@ function canSelectCell(cell) {
 }
 
 function check_row(i) {
-    var t = document.getElementById("myTable");
-    var rows = t.getElementsByTagName("tr");
-    var row = rows[i];
-    var cells = row.getElementsByTagName("td");
+    let t = document.getElementById("myTable");
+    let rows = t.getElementsByTagName("tr");
+    let row = rows[i];
+    let cells = row.getElementsByTagName("td");
 
-    var count = 0;
+    let count = 0;
 
-    for (var i = 0; i < cells.length; i++) {
+    for (let i = 0; i < cells.length; i++) {
         if (cells[i].classList.contains("selected") || cells[i].classList.contains("selected-even")) {
             count++;
         }
@@ -139,13 +139,13 @@ function check_row(i) {
 }
 
 function check_collumn(j) {
-    var t = document.getElementById("myTable");
-    var rows = t.getElementsByTagName("tr");
+    let t = document.getElementById("myTable");
+    let rows = t.getElementsByTagName("tr");
 
-    var count = 0;
+    let count = 0;
 
-    for (var i = 0; i < rows.length; i++) {
-        var cells = rows[i].getElementsByTagName("td");
+    for (let i = 0; i < rows.length; i++) {
+        let cells = rows[i].getElementsByTagName("td");
         if (cells[j].classList.contains("selected") || cells[j].classList.contains("selected-even")) {
             count++;
         }
@@ -158,11 +158,11 @@ function check_up(i, j) {
     if (i == 0)
       return true;
 
-    var t = document.getElementById("myTable");
-    var rows = t.getElementsByTagName("tr");
-    var row = rows[i-1];
-    var cells = rows[i - 1].getElementsByTagName("td");
-    var cell = cells[j];
+    let t = document.getElementById("myTable");
+    let rows = t.getElementsByTagName("tr");
+    let row = rows[i-1];
+    let cells = rows[i - 1].getElementsByTagName("td");
+    let cell = cells[j];
 
     if (cell.classList.contains("selected") || cell.classList.contains("selected-even")) {
       return false;
@@ -175,11 +175,11 @@ function check_down(i, j) {
     if (i + 1 == document.getElementById("myTable").getElementsByTagName("tr").length)
       return true;
 
-    var t = document.getElementById("myTable");
-    var rows = t.getElementsByTagName("tr");
-    var row = rows[i+1];
-    var cells = rows[i + 1].getElementsByTagName("td");
-    var cell = cells[j];
+    let t = document.getElementById("myTable");
+    let rows = t.getElementsByTagName("tr");
+    let row = rows[i+1];
+    let cells = rows[i + 1].getElementsByTagName("td");
+    let cell = cells[j];
 
     if (cell.classList.contains("selected") || cell.classList.contains("selected-even")) {
       return false;
@@ -192,11 +192,11 @@ function check_right(i, j) {
     if (j + 1 == document.getElementById("myTable").getElementsByTagName("tr")[i].getElementsByTagName("td").length)
       return true;
 
-    var t = document.getElementById("myTable");
-    var rows = t.getElementsByTagName("tr");
-    var row = rows[i];
-    var cells = rows[i].getElementsByTagName("td");
-    var cell = cells[j + 1];
+    let t = document.getElementById("myTable");
+    let rows = t.getElementsByTagName("tr");
+    let row = rows[i];
+    let cells = rows[i].getElementsByTagName("td");
+    let cell = cells[j + 1];
 
     if (cell.classList.contains("selected") || cell.classList.contains("selected-even")) {
       return false;
@@ -209,11 +209,11 @@ function check_left(i, j) {
     if (j == 0)
       return true;
 
-    var t = document.getElementById("myTable");
-    var rows = t.getElementsByTagName("tr");
-    var row = rows[i];
-    var cells = rows[i].getElementsByTagName("td");
-    var cell = cells[j - 1];
+    let t = document.getElementById("myTable");
+    let rows = t.getElementsByTagName("tr");
+    let row = rows[i];
+    let cells = rows[i].getElementsByTagName("td");
+    let cell = cells[j - 1];
 
     if (cell.classList.contains("selected") || cell.classList.contains("selected-even")) {
       return false;
@@ -261,28 +261,7 @@ function addColumn() {
 }
 
 //-----------------------------------------------------------------------------------------------------------------
-function processDate() {
-    const month = document.getElementById("month").value;
-    const day = document.getElementById("day").value;
 
-    if (month && day) {
-        if (isSummerMonth(month)) {
-            writeToFile("summer.txt", `${month} ${day}\n`);
-        } else {
-            writeToFile("winter.txt", `${month} ${day}\n`);
-        }
-
-        // Очистить введенные значения после обработки
-        document.getElementById("month").value = "";
-        document.getElementById("day").value = "";
-    }
-}
-
-function isSummerMonth(month) {
-    // Здесь определите, какие месяцы считать летними (например, май, июнь, июль)
-    const summerMonths = ["май", "июнь", "июль"];
-    return summerMonths.includes(month);
-}
 
 const summerMonths = {
     "июнь": 30,
@@ -298,9 +277,9 @@ const winterMonths = {
 
 function processDates() {
     const input = document.getElementById("dates").value;
-    const datePairs = input.split(","); // Разделение введенных данных по запятым
+    const datePairs = input.split(",");
 
-    const validData = []; // Для хранения только корректных данных
+    const validData = [];
 
     for (const datePair of datePairs) {
         const [month, day] = datePair.trim().split(" "); // Разделение месяца и числа по пробелу

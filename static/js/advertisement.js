@@ -1,6 +1,6 @@
 // Список баннеров и текущий индекс
-var advertisements = document.querySelectorAll('.advertisement');
-var currentIndex = 0;
+let advertisements = document.querySelectorAll('.advertisement');
+let currentIndex = 0;
 
 // Функция для смены баннеров с анимацией
 function rotateBanners() {
@@ -18,13 +18,13 @@ function handlePageFocus() {
 
 // Применение интервала смены баннеров
 document.getElementById('apply-interval').addEventListener('click', function () {
-    var rotationInterval = document.getElementById('rotation-interval').value;
+    let rotationInterval = document.getElementById('rotation-interval').value;
     clearInterval(rotationTimer);
     rotationTimer = setInterval(rotateBanners, rotationInterval * 1000);
 });
 
 // Обработка фокуса страницы
-var rotationTimer = setInterval(rotateBanners, 5000); // Начнем смену баннеров каждые 5 секунд
+let rotationTimer = setInterval(rotateBanners, 5000); // Начнем смену баннеров каждые 5 секунд
 handlePageFocus(); // Вызываем для начала смены баннеров
 
 window.addEventListener('focus', handlePageFocus);

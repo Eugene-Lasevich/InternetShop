@@ -1,7 +1,7 @@
 function openSettingsWindow(parentWindow) {
-    var newWindow = window.open('', 'Настройки', 'width=400,height=300');
+    let newWindow = window.open('', 'Настройки', 'width=400,height=300');
 
-    var settingsForm = document.createElement('form');
+    let settingsForm = document.createElement('form');
     settingsForm.id = 'style-form';
 
     settingsForm.innerHTML = `
@@ -26,11 +26,11 @@ function openSettingsWindow(parentWindow) {
     settingsForm.addEventListener('submit', function (e) {
         e.preventDefault();
 
-        var fontSize = newWindow.document.getElementById('font-size').value;
-        var textColor = newWindow.document.getElementById('text-color').value;
-        var backgroundColor = newWindow.document.getElementById('background-color').value;
+        let fontSize = newWindow.document.getElementById('font-size').value;
+        let textColor = newWindow.document.getElementById('text-color').value;
+        let backgroundColor = newWindow.document.getElementById('background-color').value;
 
-         var content = document.querySelector('.content');
+         let content = document.querySelector('.content');
 
     content.style.fontSize = fontSize;
     content.style.color = textColor;
