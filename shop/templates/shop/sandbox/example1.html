@@ -21,19 +21,40 @@
         <input type="button" value="Очистить поле" onclick="clearField()">
 
     </form>
+
+  <div class="image-container">
+        <img id="image"  src="/static/images/393270-big.jpg" alt="Your Image">
+    </div>
+    <div>
+        <label for="rotate-slider">Угол поворота:</label>
+        <input type="range" id="rotate-slider" min="0" max="360" step="1" value="0">
+    </div>
+    <div>
+        <label for="size-slider">Размер:</label>
+        <input type="range" id="size-slider" min="50" max="200" step="1" value="100">
+    </div>
+    <script src="script.js"></script>
+
+
+  <h1>Битовый счетчик</h1>
+    <p>Значение: <span id="counter">0</span></p>
+    <button id="increment">Увеличить</button>
+    <button id="decrement">Уменьшить</button>
+
+
 <h1>Dynamic Table</h1>
     <div>
         <label for="table-size">Table Size: </label>
         <input type="number" id="table-size">
-        <button onclick="createTable()">Create Table</button>
-        <label for="max-highlights">Max Highlights: </label>
-        <input type="number" id="max-highlights">
-        <button onclick="applyMaxHighlights()">Apply Max Highlights</button>
+        <button onclick="generateTable()">Create Table</button>
+        <label for="maxSelection">Max Selection: </label>
+        <input type="number" id="maxSelection">
+        <button onclick="setMaxSelection()">Apply Max Selection</button>
         <button onclick="addRow()">Add Row</button>
         <button onclick="addColumn()">Add Column</button>
         <button onclick="transposeTable()">Transpose Table</button>
     </div>
-    <table id="table">
+    <table id="myTable">
     </table>
 <script src="{% static '/js/table.js' %}"></script>
 </body>

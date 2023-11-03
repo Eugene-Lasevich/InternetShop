@@ -1,121 +1,266 @@
-function createTable() {
-    const tableSize = parseInt(document.getElementById("table-size").value);
-    const table = document.getElementById("table");
-    table.innerHTML = '';
 
-    for (let i = 0; i < tableSize; i++) {
-        const row = table.insertRow();
-        for (let j = 0; j < tableSize; j++) {
-            const cell = row.insertCell();
-            cell.textContent = Math.floor(Math.random() * 100) + 1;
-            cell.addEventListener("click", highlightCell); // Добавляем обработчик клика
+const table = document.getElementById("myTable");
+let maxSelection = 1;
+let selectedCells = new Set();
 
-        }
-    }
-}
-function highlightCell(event) {
-    const cell = event.target;
-
-    if (cell.classList.contains("highlighted")) {
-        cell.classList.remove("highlighted"); // Удаляем класс выделения
-    } else {
-        const cellValue = parseInt(cell.textContent);
-        if (cellValue % 2 === 0) {
-            cell.classList.add("highlighted-even"); // Добавляем класс для четных чисел
-        } else {
-            cell.classList.add("highlighted-odd"); // Добавляем класс для нечетных чисел
-        }
-    }
+// Генерация случайного числа от 1 до 10
+function getRandomNumber() {
+  return Math.floor(Math.random() * 100) + 1;
 }
 
-function addRow() {
-    const table = document.getElementById("table");
-    const newRow = table.insertRow();
-    const tableSize = table.rows[0].cells.length; // Получаем текущий размер строки
+// Генерация случайной квадратной таблицы
+function generateTable() {
+    const tableSizeInput = document.getElementById("table-size");
+    const tableSize = parseInt(tableSizeInput.value);
 
-    for (let j = 0; j < tableSize; j++) {
-        const cell = newRow.insertCell();
-        cell.textContent = Math.floor(Math.random() * 100) + 1;
-    }
-}
+    // Проверка, что введенное значение является положительным числом
+    if (!isNaN(tableSize) && tableSize > 0) {
+        const table = document.getElementById("myTable");
+        table.innerHTML = "";
+        selectedCells.clear();
 
-function addColumn() {
-    const table = document.getElementById("table");
-    const tableSize = table.rows.length;
-
-    for (let i = 0; i < tableSize; i++) {
-        const newCell = table.rows[i].insertCell();
-        newCell.textContent = Math.floor(Math.random() * 100) + 1;
-    }
-}
-
-function transposeTable() {
-    const table = document.getElementById("table");
-    const rows = table.rows;
-    const numRows = rows.length;
-    const numCols = rows[0].cells.length;
-
-    if (numRows !== numCols) {
-        alert("Нельзя транспонировать неквадратную таблицу");
-        return;
-    }
-
-    const transposedTable = document.createElement("table");
-
-    for (let i = 0; i < numCols; i++) {
-        const newRow = transposedTable.insertRow();
-        for (let j = 0; j < numRows; j++) {
-            const cell = newRow.insertCell();
-            cell.textContent = rows[j].cells[i].textContent;
-        }
-    }
-
-    // Заменяем текущую таблицу на транспонированную
-    table.parentNode.replaceChild(transposedTable, table);
-    transposedTable.id = "table"; // Присваиваем новой таблице тот же id
-}
-
-
-function applyMaxHighlights() {
-    const maxHighlights = parseInt(document.getElementById("max-highlights").value);
-    const table = document.getElementById("table");
-
-    const rows = table.rows;
-    const numRows = rows.length;
-    const numCols = rows[0].cells.length;
-
-    // Сбрасываем выделение предыдущих ячеек
-    for (let i = 0; i < numRows; i++) {
-        for (let j = 0; j < numCols; j++) {
-            rows[i].cells[j].classList.remove("highlighted");
-        }
-    }
-
-    // Выделение не более n ячеек в каждой строке
-    for (let i = 0; i < numRows; i++) {
-        let highlightedCount = 0;
-
-        for (let j = 0; j < numCols; j++) {
-            const cell = rows[i].cells[j];
-
-            // Проверяем, можно ли выделить данную ячейку
-            if (!cell.classList.contains("highlighted") && highlightedCount < maxHighlights) {
-                const leftNeighbor = j > 0 ? rows[i].cells[j - 1] : null;
-                const rightNeighbor = j < numCols - 1 ? rows[i].cells[j + 1] : null;
-
-                // Проверяем, что соседние ячейки не выделены
-                if ((!leftNeighbor || !leftNeighbor.classList.contains("highlighted")) &&
-                    (!rightNeighbor || !rightNeighbor.classList.contains("highlighted"))) {
-                    cell.classList.add("highlighted");
-                    highlightedCount++;
-                }
+        for (let i = 0; i < tableSize; i++) {
+            const row = table.insertRow(i);
+            for (let j = 0; j < tableSize; j++) {
+                const cell = row.insertCell(j);
+                cell.innerText = getRandomNumber();
+                cell.addEventListener("click", () => toggleCellSelection(cell));
             }
         }
+    } else {
+        alert("Please enter a valid positive number for Table Size.");
     }
 }
 
 
+// Транспонирование таблицы
+function transposeTable() {
+  const rows = table.rows;
+  const columns = [];
+  for (let i = 0; i < rows[0].cells.length; i++) {
+    columns.push(Array.from({ length: rows.length }, (_, j) => rows[j].cells[i]));
+  }
+  table.innerHTML = "";
+  for (const column of columns) {
+    const row = table.insertRow();
+    for (const cell of column) {
+      row.appendChild(cell.cloneNode(true));
+    }
+  }
 
+  var rowss = table.getElementsByTagName("tr");
+
+
+  for (let i = 0; i < rowss.length; i++) {
+    var _cells = rowss[i].getElementsByTagName("td");
+    for (let j = 0; j < _cells.length; j++) {
+        table.getElementsByTagName("tr")[i].getElementsByTagName("td")[j].addEventListener("click", () => toggleCellSelection(table.getElementsByTagName("tr")[i].getElementsByTagName("td")[j]));
+
+    }
+  }
+}
+
+// Выделение ячейки
+function toggleCellSelection(cell) {
+  const value = parseInt(cell.innerText, 10);
+  console.log(cell.classList)
+  if (!cell.classList.contains("selected") && !cell.classList.contains("selected-even")) {
+    if (canSelectCell(cell)) {
+        if (value % 2 == 0) {
+            cell.classList.add("selected-even");
+        } else {
+            cell.classList.add("selected");
+        }
+        selectedCells.add(cell);
+    }
+  } else if (cell.classList.contains("selected") || cell.classList.contains("selected-even")) {
+    if (value % 2 == 0) {
+      cell.classList.remove("selected-even");
+    } else {
+        cell.classList.remove("selected");
+    }
+    selectedCells.delete(cell);
+  }
+}
+
+// Проверка, можно ли выделить ячейку
+
+function canSelectCell(cell) {
+
+  const rowIndex = cell.parentNode.rowIndex;
+  const cellIndex = cell.cellIndex;
+
+  const row = cell.parentNode;
+  const cellsInRow = row.cells;
+
+  var r = check_row(rowIndex);
+  var c = check_collumn(cellIndex);
+  var n1 = check_up(rowIndex, cellIndex);
+  var n2 = check_down(rowIndex, cellIndex);
+  var n3 = check_left(rowIndex, cellIndex);
+  var n4 = check_right(rowIndex, cellIndex);
+
+  //console.log(r, c);
+  //console.log(n1, n2, n3, n4);
+
+  return r && c && n1 && n2 && n3 && n4;
+
+  for (const selectedCell of selectedCells) {
+    const selectedRowIndex = selectedCell.parentNode.rowIndex;
+    const selectedCellIndex = selectedCell.cellIndex;
+
+    if (
+      selectedRowIndex === rowIndex || // Ограничение по строке
+      selectedCellIndex === cellIndex || // Ограничение по столбцу
+      Math.abs(selectedRowIndex - rowIndex) <= 1 || // Ограничение по соседним строкам
+      Math.abs(selectedCellIndex - cellIndex) <= 1 // Ограничение по соседним столбцам
+    ) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function check_row(i) {
+    var t = document.getElementById("myTable");
+    var rows = t.getElementsByTagName("tr");
+    var row = rows[i];
+    var cells = row.getElementsByTagName("td");
+
+    var count = 0;
+
+    for (var i = 0; i < cells.length; i++) {
+        if (cells[i].classList.contains("selected") || cells[i].classList.contains("selected-even")) {
+            count++;
+        }
+    }
+
+    return count < maxSelection;
+}
+
+function check_collumn(j) {
+    var t = document.getElementById("myTable");
+    var rows = t.getElementsByTagName("tr");
+
+    var count = 0;
+
+    for (var i = 0; i < rows.length; i++) {
+        var cells = rows[i].getElementsByTagName("td");
+        if (cells[j].classList.contains("selected") || cells[j].classList.contains("selected-even")) {
+            count++;
+        }
+    }
+
+    return count < maxSelection;
+}
+
+function check_up(i, j) {
+    if (i == 0)
+      return true;
+
+    var t = document.getElementById("myTable");
+    var rows = t.getElementsByTagName("tr");
+    var row = rows[i-1];
+    var cells = rows[i - 1].getElementsByTagName("td");
+    var cell = cells[j];
+
+    if (cell.classList.contains("selected") || cell.classList.contains("selected-even")) {
+      return false;
+    } else {
+      return true;
+    }
+}
+
+function check_down(i, j) {
+    if (i + 1 == document.getElementById("myTable").getElementsByTagName("tr").length)
+      return true;
+
+    var t = document.getElementById("myTable");
+    var rows = t.getElementsByTagName("tr");
+    var row = rows[i+1];
+    var cells = rows[i + 1].getElementsByTagName("td");
+    var cell = cells[j];
+
+    if (cell.classList.contains("selected") || cell.classList.contains("selected-even")) {
+      return false;
+    } else {
+      return true;
+    }
+}
+
+function check_right(i, j) {
+    if (j + 1 == document.getElementById("myTable").getElementsByTagName("tr")[i].getElementsByTagName("td").length)
+      return true;
+
+    var t = document.getElementById("myTable");
+    var rows = t.getElementsByTagName("tr");
+    var row = rows[i];
+    var cells = rows[i].getElementsByTagName("td");
+    var cell = cells[j + 1];
+
+    if (cell.classList.contains("selected") || cell.classList.contains("selected-even")) {
+      return false;
+    } else {
+      return true;
+    }
+}
+
+function check_left(i, j) {
+    if (j == 0)
+      return true;
+
+    var t = document.getElementById("myTable");
+    var rows = t.getElementsByTagName("tr");
+    var row = rows[i];
+    var cells = rows[i].getElementsByTagName("td");
+    var cell = cells[j - 1];
+
+    if (cell.classList.contains("selected") || cell.classList.contains("selected-even")) {
+      return false;
+    } else {
+      return true;
+    }
+}
+
+// Установить максимальное количество выбранных ячеек
+function setMaxSelection() {
+  const input = document.getElementById("maxSelection");
+  maxSelection = parseInt(input.value, 10);
+  resetSelection();
+}
+
+// Сбросить выделение
+function resetSelection() {
+  for (const cell of selectedCells) {
+    cell.classList.remove("selected");
+    const value = parseInt(cell.innerText, 10);
+    if (value % 2 === 0) {
+      cell.classList.remove("selected-even");
+    }
+  }
+  selectedCells.clear();
+}
+
+// Добавить новый ряд
+function addRow() {
+  const newRow = table.insertRow(table.rows.length);
+  for (let i = 0; i < table.rows[0].cells.length; i++) {
+    const cell = newRow.insertCell(i);
+    cell.innerText = getRandomNumber();
+    cell.addEventListener("click", () => toggleCellSelection(cell));
+  }
+}
+
+// Добавить новую колонку
+function addColumn() {
+  for (let i = 0; i < table.rows.length; i++) {
+    const cell = table.rows[i].insertCell(table.rows[i].cells.length);
+    cell.innerText = getRandomNumber();
+    cell.addEventListener("click", () => toggleCellSelection(cell));
+  }
+}
+
+//-----------------------------------------------------------------------------------------------------------------
 function processDate() {
     const month = document.getElementById("month").value;
     const day = document.getElementById("day").value;
@@ -148,7 +293,7 @@ const summerMonths = {
 const winterMonths = {
     "декабрь": 31,
     "январь": 31,
-    "февраль": 27
+    "февраль": 28
 };
 
 function processDates() {
@@ -212,3 +357,39 @@ function writeDatesToFile(filename, data) {
 function clearField() {
     document.getElementById("dates").value = "";
 }
+
+
+//----------------------------------------------------------------------------------------
+const image = document.getElementById('image');
+const rotateSlider = document.getElementById('rotate-slider');
+const sizeSlider = document.getElementById('size-slider');
+
+rotateSlider.addEventListener('input', () => {
+    const rotateValue = rotateSlider.value;
+    image.style.transform = `rotate(${rotateValue}deg) scale(${sizeSlider.value / 100})`;
+});
+
+sizeSlider.addEventListener('input', () => {
+    const sizeValue = sizeSlider.value;
+    image.style.transform = `rotate(${rotateSlider.value}deg) scale(${sizeValue / 100})`;
+});
+
+
+//------------------------------------------------------------------------------------
+let counterValue = 0;
+
+function updateCounter() {
+    document.getElementById("counter").textContent = counterValue.toString(2);
+}
+
+document.getElementById("increment").addEventListener("click", function () {
+    counterValue = counterValue + 1;
+    updateCounter();
+});
+
+document.getElementById("decrement").addEventListener("click", function () {
+    counterValue = counterValue - 1;
+    updateCounter();
+});
+
+updateCounter();
