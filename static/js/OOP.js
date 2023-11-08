@@ -25,17 +25,17 @@ DeliverableProduct.prototype = Object.create(Product.prototype);
 DeliverableProduct.prototype.constructor = DeliverableProduct;
 
 // Добавим декоратор для функции getPrice
-function withLoggingGetPrice(target, key, descriptor) {
-    const originalMethod = descriptor.value;
-    descriptor.value = function () {
-        console.log(`Getting price for product: ${this.name}`);
-        return originalMethod.apply(this);
-    };
-    return descriptor;
-}
+// function withLoggingGetPrice(target, key, descriptor) {
+//     const originalMethod = descriptor.value;
+//     descriptor.value = function () {
+//         console.log(`Getting price for product: ${this.name}`);
+//         return originalMethod.apply(this);
+//     };
+//     return descriptor;
+// }
 
 // Применяем декоратор к методу getPrice
-DeliverableProduct.prototype.getPrice = withLoggingGetPrice(DeliverableProduct.prototype, 'getPrice');
+// DeliverableProduct.prototype.getPrice = withLoggingGetPrice(DeliverableProduct.prototype, 'getPrice');
 
 // Создание экземпляра DeliverableProduct
 const product = new DeliverableProduct("Laptop", 1000, "2 days");
@@ -72,10 +72,10 @@ class DeliverableProduct1 extends Product1 {
     }
 
     // Декоратор для метода getPrice
-    @withLoggingGetPrice1
-    getPrice() {
-        return super.getPrice;
-    }
+    // @withLoggingGetPrice1
+    // getPrice() {
+    //     return super.getPrice;
+    // }
 }
 
 // Декоратор для метода getPrice

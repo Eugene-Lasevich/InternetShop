@@ -15,12 +15,15 @@ th, td {
 }
 
 .selected {
-    background-color: lightblue;
+    background: linear-gradient(135deg, #3498db, #2980b9); /* Голубой градиент */
+    color: white; /* Белый текст */
 }
 
 .selected-even {
-    background-color: lightgreen;
+    background: linear-gradient(135deg, #2ecc71, #27ae60); /* Зеленый градиент */
+    color: white; /* Белый текст */
 }
+
 
 
 

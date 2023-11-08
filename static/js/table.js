@@ -105,20 +105,7 @@ function canSelectCell(cell) {
 
   return r && c && n1 && n2 && n3 && n4;
 
-  for (const selectedCell of selectedCells) {
-    const selectedRowIndex = selectedCell.parentNode.rowIndex;
-    const selectedCellIndex = selectedCell.cellIndex;
 
-    if (
-      selectedRowIndex === rowIndex || // Ограничение по строке
-      selectedCellIndex === cellIndex || // Ограничение по столбцу
-      Math.abs(selectedRowIndex - rowIndex) <= 1 || // Ограничение по соседним строкам
-      Math.abs(selectedCellIndex - cellIndex) <= 1 // Ограничение по соседним столбцам
-    ) {
-      return false;
-    }
-  }
-  return true;
 }
 
 function check_row(i) {
