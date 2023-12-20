@@ -1,0 +1,33 @@
+/* styles/ProductDetail.css */
+
+.product-detail {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-detail h2 {
+    margin-bottom: 10px;
+}
+
+.product-detail p {
+    margin-bottom: 15px;
+}
+
+.product-detail img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.product-detail a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.product-detail a:hover {
+    text-decoration: underline;
+}
